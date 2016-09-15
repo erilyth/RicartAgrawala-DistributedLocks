@@ -1,0 +1,61 @@
+import java.net.MalformedURLException;
+import java.rmi.*;  
+import java.rmi.server.*;
+
+import java.util.PriorityQueue;
+
+public class AdderRemote extends UnicastRemoteObject implements Adder{  
+	
+	private PriorityQueue<QueueElement> queue = new PriorityQueue<QueueElement>();
+	private int hasLock = 0;
+	private int requestLock = 0; // This would have the sent request timestamp
+	private String name;
+	private myClock = 1;
+	
+	AdderRemote()throws RemoteException{  
+		super();
+	}  
+	
+	public int add(int x,int y){
+		return x+y;
+	}
+	
+	public int SendAckRequest(String receiver, int clock) throws RemoteException{
+		try {
+			Adder stub=(Adder)Naming.lookup("rmi://localhost:5000/" + receiver);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public int ReceiveLockRequest(String sender, int clock) throws RemoteException {
+		if(requestLock == 0){
+			SendAckRequest(sender,clock);
+		}
+		else if(hasLock != 0){
+			QueueElement elem = new QueueElement(sender,clock);
+			queue.add(elem);
+		}
+		else if(requestLock != 0){
+			if(clock<requestLock){
+				SendAckRequest(sender,clock);
+			}
+		}
+		return 0;
+	}
+	
+	public int LockRequest(String receiver, int clock) throws RemoteException{
+		try {
+			Adder stub=(Adder)Naming.lookup("rmi://localhost:5000/" + receiver);
+			requestLock = 1;
+		} catch (MalformedURLException e) {	
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+} 

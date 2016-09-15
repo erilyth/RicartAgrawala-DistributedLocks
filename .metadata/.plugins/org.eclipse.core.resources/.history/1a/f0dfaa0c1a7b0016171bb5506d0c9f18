@@ -1,0 +1,18 @@
+import java.rmi.*;  
+import java.rmi.server.*;  
+
+public class AdderRemote extends UnicastRemoteObject implements Adder{  
+	
+	AdderRemote()throws RemoteException{  
+		super();  
+	}  
+	
+	public int add(int x,int y){
+		return x+y;
+	}
+	
+	public int LockRequest(String sender, String receiver, int clock) throws RemoteException{
+		Adder stub=(Adder)Naming.lookup("rmi://localhost:5000/sonoo");
+		return 0;
+	}
+} 

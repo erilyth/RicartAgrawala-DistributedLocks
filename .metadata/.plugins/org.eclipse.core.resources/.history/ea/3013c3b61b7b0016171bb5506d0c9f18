@@ -1,0 +1,35 @@
+import java.net.MalformedURLException;
+import java.rmi.*;  
+import java.rmi.server.*;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class AdderRemote extends UnicastRemoteObject implements Adder{  
+	
+	public PriorityQueue queue = new PriorityQueue(10);
+	
+	AdderRemote()throws RemoteException{  
+		super();  
+	}  
+	
+	public int add(int x,int y){
+		return x+y;
+	}
+	
+	public int ReceiveLockRequest(String sender, int clock) throws RemoteException {
+		
+		return 0;
+	}
+	
+	public int LockRequest(String sender, String receiver, int clock) throws RemoteException{
+		try {
+			Adder stub=(Adder)Naming.lookup("rmi://localhost:5000/" + receiver);
+		} catch (MalformedURLException e) {	
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+} 
