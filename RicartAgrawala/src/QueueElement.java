@@ -2,7 +2,7 @@ import java.lang.*;
 
 public class QueueElement implements Comparable<QueueElement> {
 
-        private String name;
+        String name;
 		private int clockValue;
 
         public QueueElement(String name, int clock) {
