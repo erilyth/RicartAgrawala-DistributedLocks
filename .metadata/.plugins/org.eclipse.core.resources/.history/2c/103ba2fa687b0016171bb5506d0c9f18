@@ -91,9 +91,13 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	AdderRemote(String name_cur)throws RemoteException{  
 		super();
 		name = name_cur;
+	}  
+	
+	public int add(int x,int y){
+		return x+y;
 	}
 	
-	public int UnlockRequest(String sender, int clock) throws RemoteException{
+	public void ReceiveUnlockRequest(String sender, int clock) throws RemoteException{
 		QueueElement top = queue.peek();
 		if(top.getName() == sender){
 			queue.poll();
@@ -102,14 +106,35 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 			System.out.println("Top not the node which sent the request!");
 			while(top.getClock() <= clock){
 				queue.poll();
-				top = queue.peek();
 			}
+		}
+	}
+	
+	public int UnlockRequest(String receiver, int clock) throws RemoteException{
+		try {
+			Adder receiver_node=(Adder)Naming.lookup("rmi://localhost:5000/" + receiver);
+			receiver_node.ReceiveUnlockRequest(receiver, clock);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
 		}
 		return 0;
 	}
 	
-	public int SendAckRequest(String sender) throws RemoteException{
-		acks.put(sender, 1);
+	public void ReceiveAckRequest(String sender) throws RemoteException{
+		acks.put(sender,1);
+	}
+	
+	public int SendAckRequest(String receiver) throws RemoteException{
+		try {
+			Adder receiver_node=(Adder)Naming.lookup("rmi://localhost:5000/" + receiver);
+			receiver_node.ReceiveAckRequest(name);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
 		return 0;
 	}
 	

@@ -3,7 +3,9 @@ import java.util.HashMap;
 import java.util.PriorityQueue;
 
 public interface Adder extends Remote{ 
-	public int LockRequest(String receiver, int clock)
+	public int add(int x,int y)
+			throws RemoteException;
+	public int LockRequest(String receiver)
 			throws RemoteException;
 	public int SendAckRequest(String receiver)
 			throws RemoteException;
