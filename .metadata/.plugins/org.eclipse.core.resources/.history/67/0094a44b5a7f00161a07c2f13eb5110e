@@ -1,0 +1,51 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+
+public class QueueElement implements Comparable<QueueElement> {
+
+		private HashMap<String,Integer> clockValue;
+
+        public QueueElement(HashMap<String,Integer> clock) {
+            this.clockValue = clock;
+        }
+
+        public HashMap<String,Integer> getClock() {
+            return clockValue;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final QueueElement other = (QueueElement) obj;
+            if (this.clockValue != other.clockValue) {
+                return false;
+            }
+            return true;
+        }
+
+        public int compareTo(QueueElement i) {
+            if (this.clockValue == i.clockValue) {
+                return 0;
+            }
+            int greater = 1;
+            for (String key : this.clockValue.keySet()) {
+                if(this.clockValue.get(key) < i.clockValue.get(key)){
+                	greater = 0;
+                }
+            }
+            return greater;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s: $%d", name, clockValue);
+        }      
+      
+    }

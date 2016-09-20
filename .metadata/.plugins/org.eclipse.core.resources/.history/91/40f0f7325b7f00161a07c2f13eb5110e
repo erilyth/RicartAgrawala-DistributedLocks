@@ -1,0 +1,54 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+
+public class QueueElement implements Comparable<QueueElement> {
+
+        String name;
+		private Clock clock;
+
+        public QueueElement(String name, Clock clock) {
+            this.name = name;
+            this.clock = clock;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Clock getClock() {
+            return clock;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final QueueElement other = (QueueElement) obj;
+            if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+                return false;
+            }
+            if (this.clock != other.clock) {
+                return false;
+            }
+            return true;
+        }
+
+        public int compareTo(QueueElement i) {
+            if (this.clock == i.clock) {
+                return this.name.compareTo(i.name);
+            }
+            return this.clock - i.clock;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%s: $%d", name, clockValue);
+        }      
+      
+    }

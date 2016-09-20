@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.rmi.*;
 
@@ -72,16 +77,50 @@ public class MyClient{
 	
 	public static void main(String args[]){  
 		try{
-			Adder stub=new AdderRemote("myProg-" + args[0].toString()); 
+			Adder stub= new AdderRemote("myProg-" + args[0].toString()); 
 			my_name = "myProg-" + args[0].toString();
+			String filename = "output.txt";
 			Naming.rebind("rmi://localhost:5000/myProg-" + args[0].toString(),stub);
 			Thread.sleep(5000); // Wait for 5 seconds
-			System.out.println("Please give me the lock! " + my_name);
-			lock(stub);
-			System.out.println("YAY I HAVE THE LOCK! " + my_name);
-			Thread.sleep(5000);
-			unlock(stub);
-			System.out.println("I NO LONGER NEED THE LOCK! " + my_name);
+			int i = 0;
+			System.out.println("Hello!");
+			while(i<2){
+				System.out.println("Please give me the lock! " + my_name);
+				int lock_sent_timer = stub.getMyClock();
+				System.out.println("Got clock");
+				lock(stub);
+				System.out.println("YAY I HAVE THE LOCK! " + my_name);
+				File f = new File(filename);
+				if(!f.exists()){
+				    f.createNewFile();
+				    PrintWriter outFile = new PrintWriter(new FileWriter(f));
+				    outFile.print("1" + ":" + args[0].toString() + ":" + lock_sent_timer + "\n");
+				    outFile.close();
+				}
+				else{
+					BufferedReader br = new BufferedReader(new FileReader(f));
+					String line = null;
+					String last_line = null;
+					while((line = br.readLine()) != null){
+						if(line != null){
+							last_line = line;
+						}
+					}
+					br.close();
+					String[] parts = last_line.split(":");
+					int new_counter = Integer.parseInt(parts[0]) + 1;
+					PrintWriter outFile = new PrintWriter(new FileWriter(f,true));
+					outFile.print(new_counter + ":" + args[0].toString() + ":" + lock_sent_timer + "\n");
+					outFile.close();
+				}
+				unlock(stub);
+				System.out.println("I NO LONGER NEED THE LOCK! " + my_name);
+				int randomNum = 1 + (int)(Math.random() * 2 * total_clients); 
+				Thread.sleep(randomNum * 1000);
+				i++;
+			}
+			System.out.println("Processing has been finished on " + my_name);
+			System.out.println("Press Ctrl+C to exit");
 		}catch(Exception e){
 			
 		}
