@@ -5,10 +5,18 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.rmi.*;
+import java.util.HashMap;
+
+import com.google.protobuf.CodedInputStream;
+
+import com.example.result.ResultProto.Clock;
+import com.example.result.ResultProto.ClockMember;
+import com.example.result.ResultProto.Queue;
+import com.example.result.ResultProto.QueueElement;
 
 public class MyClient{  
 	
-	public static int total_clients = 3;
+	public static int total_clients = 2;
 	public static String my_name;
 	
 	public static int unlock(Adder node) throws RemoteException, MalformedURLException, NotBoundException{
@@ -37,10 +45,13 @@ public class MyClient{
 	}
 	
 	public static int lock(Adder node) throws RemoteException, MalformedURLException, NotBoundException{
-		int cur_time = node.getMyClock();
-		cur_time += 1;
+		Clock cur_time = node.getMyClock();
+		HashMap<String, Integer> cur_clock = cur_time.getClock();
+		cur_clock.put(my_name, cur_clock.get(my_name) + 1);
+		cur_time.setClock(cur_clock);
 		node.setMyClock(cur_time);
 		node.setRequestLock(1);
+		node.setRequestLockClock(node.getMyClock());
 		node.addqueue(new QueueElement(my_name,cur_time));
 		String name = "myProg";
 		for(int i=1;i<=total_clients;i++){
@@ -49,7 +60,7 @@ public class MyClient{
 			if(!node_name.equals(my_name)){
 				Adder receiver_node;
 				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + node_name);
-				receiver_node.LockRequest(node.getName(),node.getMyClock());
+				receiver_node.LockRequest(node.getName(),cur_time);
 				System.out.println("LockRequest has returned from " + node_name + " to " + my_name);
 			}
 		}
@@ -86,7 +97,7 @@ public class MyClient{
 			System.out.println("Hello!");
 			while(i<2){
 				System.out.println("Please give me the lock! " + my_name);
-				int lock_sent_timer = stub.getMyClock();
+				Clock lock_sent_timer = stub.getMyClock();
 				System.out.println("Got clock");
 				lock(stub);
 				System.out.println("YAY I HAVE THE LOCK! " + my_name);

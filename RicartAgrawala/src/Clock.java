@@ -3,21 +3,21 @@ import java.util.HashMap;
 
 public class Clock implements Comparable<Clock> {
 
-	private HashMap<String,Integer> clockValue;
+	public int[] clockValue;
 
-    public Clock(HashMap<String,Integer> clock) {
+    public Clock(int[] clock) {
         this.clockValue = clock;
     }
     
-    public void UpdateClock(String key, int value) {
-    	this.clockValue.put(key, value);
+    public void UpdateClock(int key, int value) {
+    	this.clockValue[key] = value;
     }
 
-    public HashMap<String,Integer> getClock() {
+    public int[] getClock() {
         return clockValue;
     }
     
-    public void setClock(HashMap<String, Integer> clock) {
+    public void setClock(int[] clock) {
     	this.clockValue = clock;
     }
 

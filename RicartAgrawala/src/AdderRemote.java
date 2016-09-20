@@ -5,26 +5,29 @@ import java.util.*;
 
 import java.util.PriorityQueue;
 
+import com.google.protobuf.CodedInputStream;
+
+import com.example.result.ResultProto.Clock;
+import com.example.result.ResultProto.Clock.Builder;
+import com.example.result.ResultProto.ClockMember;
+import com.example.result.ResultProto.Queue;
+import com.example.result.ResultProto.QueueElement;
+
 public class AdderRemote extends UnicastRemoteObject implements Adder{  
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public PriorityQueue<QueueElement> queue = new PriorityQueue<QueueElement>();
+	public Queue.Builder queue = Queue.newBuilder();
 	public HashMap<String, String> acks = new HashMap<String, String>();
 	public int hasLock = 0;
 	public int requestLock = 0; // This would have the sent request timestamp
+	public Clock.Builder requestLockClockB = Clock.newBuilder();
+	public Clock requestLockClock = requestLockClockB.build();
 	public String name;
-	public int myClock = 1;
-	
-	public PriorityQueue<QueueElement> getQueue() throws RemoteException{
-		return queue;
-	}
-
-	public void setQueue(PriorityQueue<QueueElement> queue) throws RemoteException {
-		this.queue = queue;
-	}
+	public Clock.Builder myClockB = Clock.newBuilder();
+	public Clock myClock = myClockB.build();
 
 	public int getHasLock() throws RemoteException {
 		return hasLock;
@@ -50,12 +53,12 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		this.name = name;
 	}
 
-	public int getMyClock() throws RemoteException {
+	public Clock getMyClock() throws RemoteException {
 		return myClock;
 	}
 
-	public void setMyClock(int myClock) throws RemoteException {
-		this.myClock = myClock;
+	public void setMyClock(Clock clock) throws RemoteException {
+		this.myClock = clock;
 	}
 	
 	public void addqueue(QueueElement elem) throws RemoteException {
@@ -90,12 +93,21 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		acks.put(name, "1");
 	}
 	
+	public void setRequestLockClock(Clock clock) throws RemoteException {
+		this.requestLockClock = clock;
+	}
+	
 	AdderRemote(String name_cur) throws RemoteException{  
 		super();
 		name = name_cur;
+		String name = "myProg";
+		for(int i=1;i<=2;i++){
+			String node_name = name + "-" + i;
+			this.myClock.UpdateClock(node_name, 1);
+		}
 	}
 	
-	public int UnlockRequest(String sender, int clock) throws RemoteException{
+	public int UnlockRequest(String sender, Clock clock) throws RemoteException{
 		QueueElement top = queue.peek();
 		if(top.getName().equals(sender)){
 			queue.poll();
@@ -104,7 +116,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		}
 		else{
 			System.out.println("Top not the node which sent the request!");
-			while(top != null && top.getClock() <= clock && !top.getName().equals(name)){
+			while(top != null && clock.compareTo(top.getClock()) == 1 && !top.getName().equals(name)){
 				queue.poll();
 				top = queue.peek();
 			}
@@ -118,10 +130,9 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		return 0;
 	}
 	
-	public int LockRequest(String sender, int clock) throws RemoteException, MalformedURLException, NotBoundException{
+	public int LockRequest(String sender, Clock clock) throws RemoteException, MalformedURLException, NotBoundException{
 		System.out.println("LockRequest received from " + sender + " to " + name);
-		System.out.println(name + " requestLock = " + requestLock);
-		myClock = Math.max(myClock,clock) + 1;
+		//myClock = Math.max(myClock,clock) + 1;
 		if(requestLock == 0){
 			Adder receiver_node;
 			receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
@@ -133,7 +144,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 			queue.add(elem);
 		}
 		else if(requestLock != 0){ // requestLock stores the time
-			if(clock<requestLock){
+			if(requestLockClock.compareTo(clock) == 1){
 				Adder receiver_node;
 				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
 				receiver_node.SendAckRequest(name);

@@ -2,13 +2,21 @@ import java.net.MalformedURLException;
 import java.rmi.*; 
 import java.util.PriorityQueue;
 
+import com.google.protobuf.CodedInputStream;
+
+import com.example.result.ResultProto.Clock;
+import com.example.result.ResultProto.ClockMember;
+import com.example.result.ResultProto.Queue;
+import com.example.result.ResultProto.QueueElement;
+
 public interface Adder extends Remote{ 
-	public int LockRequest(String receiver, int clock)
+	public int LockRequest(String receiver, Clock clock)
 			throws RemoteException, MalformedURLException, NotBoundException;
 	public int SendAckRequest(String receiver)
 			throws RemoteException;
-	public int UnlockRequest(String receiver, int clock)
+	public int UnlockRequest(String receiver, Clock clock)
 			throws RemoteException;
+	public void setRequestLockClock(Clock clock) throws RemoteException;
 	public PriorityQueue<QueueElement> getQueue() throws RemoteException;
 	public void setQueue(PriorityQueue<QueueElement> queue) throws RemoteException;
 	public int getHasLock() throws RemoteException;
@@ -21,7 +29,7 @@ public interface Adder extends Remote{
 	public QueueElement removequeue() throws RemoteException;
 	public int getack(String name) throws RemoteException;
 	public void setack(String name) throws RemoteException;
-	public int getMyClock() throws RemoteException;
-	public void setMyClock(int clock) throws RemoteException;
+	public Clock getMyClock() throws RemoteException;
+	public void setMyClock(Clock clock) throws RemoteException;
 	public QueueElement topqueue() throws RemoteException;
 }

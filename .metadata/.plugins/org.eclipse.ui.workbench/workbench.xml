@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="733" maximized="true" width="1024" x="0" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -19,6 +19,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="238" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -39,19 +40,19 @@
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Adder.java" partName="Adder.java" path="/home/vishalapr/Projects/RicartAndAgrawala-DistributedLocks/RicartAgrawala/src/Adder.java" title="Adder.java" tooltip="RicartAgrawala/src/Adder.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RicartAgrawala/src/Adder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="118" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="390" selectionTopPixel="0"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdderRemote.java" partName="AdderRemote.java" path="/home/vishalapr/Projects/RicartAndAgrawala-DistributedLocks/RicartAgrawala/src/AdderRemote.java" title="AdderRemote.java" tooltip="RicartAgrawala/src/AdderRemote.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RicartAgrawala/src/AdderRemote.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2288" selectionTopPixel="1656"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1609" selectionTopPixel="750"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyClient.java" partName="MyClient.java" path="/home/vishalapr/Projects/RicartAndAgrawala-DistributedLocks/RicartAgrawala/src/MyClient.java" title="MyClient.java" tooltip="RicartAgrawala/src/MyClient.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RicartAgrawala/src/MyClient.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1784" selectionTopPixel="369"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="159" selectionTopPixel="1373"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QueueElement.java" partName="QueueElement.java" path="/home/vishalapr/Projects/RicartAndAgrawala-DistributedLocks/RicartAgrawala/src/QueueElement.java" title="QueueElement.java" tooltip="RicartAgrawala/src/QueueElement.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RicartAgrawala/src/QueueElement.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="254" selectionTopPixel="52"/>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="Result.proto" partName="Result.proto" path="/home/vishalapr/Projects/RicartAndAgrawala-DistributedLocks/RicartAgrawala/Result.proto" title="Result.proto" tooltip="RicartAgrawala/Result.proto" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RicartAgrawala/Result.proto"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -90,7 +91,6 @@
 <expanded>
 <category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings (1 item)"/>
-<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="297" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -155,43 +155,30 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="topLeft">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@20765ed5" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@20765ed5" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6594324" ratioLeft="395" ratioRight="204" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<info folder="true" part="bottomRight" ratio="0.6594324" ratioLeft="395" ratioRight="204" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomLeft" ratio="0.49916527" ratioLeft="299" ratioRight="300" relationship="4" relative="topLeft">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="bottomLeft" ratio="0.49916527" ratioLeft="299" ratioRight="300" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -245,9 +232,9 @@
 <new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.jdt.ui.JavadocView"/>
@@ -309,161 +296,163 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/Adder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/AdderRemote.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/MyClient.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/QueueElement.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/MyServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/MyClient.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/Adder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/Clock.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RicartAgrawala/src/com/example/result/ResultProto.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/RicartAgrawala/Result.proto"/>
 </editors>
-<item historyLabel="AdderRemote.java" index="1">
-<position/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="2075" y="0"/>
+<item historyLabel="Clock.java" index="4">
+<position info="not_deleted" x="86" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="2174" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position info="not_deleted" x="86" y="0"/>
+</item>
+<item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="2174" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="3519" y="0"/>
+</item>
+<item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="2174" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="2056" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position info="not_deleted" x="86" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
 <position/>
 </item>
-<item historyLabel="AdderRemote.java" index="1">
+<item historyLabel="Clock.java" index="4">
+<position/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position info="not_deleted" x="91" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position info="not_deleted" x="256" y="0"/>
+</item>
+<item historyLabel="ResultProto.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position/>
+</item>
+<item historyLabel="Result.proto" index="6">
+<position info="not_deleted" x="305" y="0"/>
+</item>
+<item historyLabel="QueueElement.java" index="1">
+<position/>
+</item>
+<item historyLabel="Result.proto" index="6">
+<position info="not_deleted" x="305" y="0"/>
+</item>
+<item historyLabel="QueueElement.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Result.proto" index="6">
+<position info="not_deleted" x="358" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
+<position/>
+</item>
+<item historyLabel="QueueElement.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1608" y="0"/>
+</item>
+<item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="3312" y="0"/>
+</item>
+<item historyLabel="Result.proto" index="6">
+<position info="not_deleted" x="358" y="0"/>
+</item>
+<item historyLabel="MyClient.java" index="2">
+<position info="not_deleted" x="3312" y="0"/>
+</item>
+<item historyLabel="QueueElement.java" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Clock.java" index="4">
 <position/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position/>
+<position info="not_deleted" x="405" y="0"/>
 </item>
-<item historyLabel="AdderRemote.java" index="1">
-<position/>
-</item>
-<item historyLabel="QueueElement.java" index="3">
-<position info="not_deleted" x="254" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
+<item historyLabel="Clock.java" index="4">
 <position/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position/>
+<position info="not_deleted" x="405" y="0"/>
 </item>
-<item historyLabel="MyClient.java" index="2">
-<position/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position/>
-</item>
-<item historyLabel="MyServer.java" index="4">
+<item historyLabel="QueueElement.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position/>
+<position info="not_deleted" x="218" y="0"/>
 </item>
-<item historyLabel="QueueElement.java" index="3">
-<position info="not_deleted" x="254" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position/>
+<item historyLabel="Result.proto" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="2226" y="0"/>
+<position info="not_deleted" x="218" y="0"/>
 </item>
-<item historyLabel="AdderRemote.java" index="1">
-<position/>
+<item historyLabel="Adder.java" index="3">
+<position info="not_deleted" x="538" y="0"/>
 </item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="2226" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="332" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="2141" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="2144" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position info="not_deleted" x="242" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position info="not_deleted" x="268" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position info="not_deleted" x="268" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
-</item>
-<item historyLabel="Adder.java" index="0">
-<position info="not_deleted" x="118" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1608" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="2226" y="0"/>
+<position info="not_deleted" x="159" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="432" y="0"/>
+</item>
+<item historyLabel="Adder.java" index="3">
+<position info="not_deleted" x="390" y="0"/>
+</item>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="432" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="39" y="0"/>
+<position info="not_deleted" x="159" y="0"/>
 </item>
-<item historyLabel="QueueElement.java" index="3">
-<position info="not_deleted" x="254" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="432" y="0"/>
 </item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="1258" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="852" y="0"/>
 </item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="620" y="0"/>
 </item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="1258" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="908" y="0"/>
 </item>
-<item historyLabel="MyClient.java" index="2">
-<position/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="670" y="0"/>
-</item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
+<item historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1030" y="0"/>
 </item>
 <item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="931" y="0"/>
+<position info="not_deleted" x="159" y="0"/>
 </item>
-<item historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="931" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="930" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="1799" y="0"/>
-</item>
-<item historyLabel="MyClient.java" index="2">
-<position info="not_deleted" x="1784" y="0"/>
-</item>
-<item active="true" historyLabel="AdderRemote.java" index="1">
-<position info="not_deleted" x="1714" y="0"/>
+<item active="true" historyLabel="AdderRemote.java" index="0">
+<position info="not_deleted" x="1030" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -482,14 +471,23 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyServer.java" tooltip="RicartAgrawala/src/MyServer.java">
-<persistable path="/RicartAgrawala/src/MyServer.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Result.proto" tooltip="RicartAgrawala/Result.proto">
+<persistable path="/RicartAgrawala/Result.proto"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QueueElement.java" tooltip="RicartAgrawala/src/QueueElement.java">
 <persistable path="/RicartAgrawala/src/QueueElement.java"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultProto.java" tooltip="RicartAgrawala/src/com/example/result/ResultProto.java">
+<persistable path="/RicartAgrawala/src/com/example/result/ResultProto.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Clock.java" tooltip="RicartAgrawala/src/Clock.java">
+<persistable path="/RicartAgrawala/src/Clock.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyClient.java" tooltip="RicartAgrawala/src/MyClient.java">
 <persistable path="/RicartAgrawala/src/MyClient.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyServer.java" tooltip="RicartAgrawala/src/MyServer.java">
+<persistable path="/RicartAgrawala/src/MyServer.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdderRemote.java" tooltip="RicartAgrawala/src/AdderRemote.java">
 <persistable path="/RicartAgrawala/src/AdderRemote.java"/>

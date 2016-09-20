@@ -2,9 +2,9 @@
 public class QueueElement implements Comparable<QueueElement> {
 
         String name;
-		private int clockValue;
+		private Clock clockValue;
 
-        public QueueElement(String name, int clock) {
+        public QueueElement(String name, Clock clock) {
             this.name = name;
             this.clockValue = clock;
         }
@@ -13,7 +13,7 @@ public class QueueElement implements Comparable<QueueElement> {
             return name;
         }
 
-        public int getClock() {
+        public Clock getClock() {
             return clockValue;
         }
 
@@ -40,12 +40,12 @@ public class QueueElement implements Comparable<QueueElement> {
                 return this.name.compareTo(i.name);
             }
 
-            return this.clockValue - i.clockValue;
+            return this.clockValue.compareTo(i.clockValue);
         }
 
-        @Override
+        /*@Override
         public String toString() {
             return String.format("%s: $%d", name, clockValue);
-        }      
+        } */     
       
     }

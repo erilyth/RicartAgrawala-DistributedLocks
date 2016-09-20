@@ -1,0 +1,11 @@
+option java_package = "com.example.result";
+option java_outer_classname = "ResultProto";
+
+message ClockMember {
+  optional string name = 1;
+  optional int32 value = 2;
+}
+
+message Clock {
+  repeated Student student = 1;
+}
