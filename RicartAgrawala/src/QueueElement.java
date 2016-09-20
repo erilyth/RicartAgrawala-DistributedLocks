@@ -1,4 +1,3 @@
-import java.lang.*;
 
 public class QueueElement implements Comparable<QueueElement> {
 

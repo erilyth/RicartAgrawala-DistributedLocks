@@ -1,0 +1,116 @@
+import java.rmi.*;  
+import java.rmi.server.*;
+import java.util.*;
+
+import java.util.PriorityQueue;
+
+public class AdderRemote extends UnicastRemoteObject implements Adder{  
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public PriorityQueue<QueueElement> queue = new PriorityQueue<QueueElement>();
+	public HashMap<String, Integer> acks;
+	public int hasLock = 0;
+	public int requestLock = 0; // This would have the sent request timestamp
+	public String name;
+	public int myClock = 1;
+	
+	AdderRemote(String name_cur)throws RemoteException{  
+		super();
+		name = name_cur;
+	}
+
+	public int LockRequest(String receiver, int clock) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int SendAckRequest(String receiver) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int UnlockRequest(String receiver, int clock) throws RemoteException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public PriorityQueue<QueueElement> getQueue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setQueue(PriorityQueue<QueueElement> queue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getHasLock() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setHasLock(int hasLock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getRequestLock() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setRequestLock(int requestLock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addqueue(QueueElement elem) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public QueueElement removequeue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getack(String name) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setack(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getMyClock() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setMyClock(int clock) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public QueueElement topqueue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+} 
