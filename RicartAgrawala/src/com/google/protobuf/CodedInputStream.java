@@ -882,13 +882,12 @@ public final class CodedInputStream {
   private int recursionLimit = DEFAULT_RECURSION_LIMIT;
 
   /** See setSizeLimit() */
+  private int sizeLimit = DEFAULT_SIZE_LIMIT;
 
   private static final int DEFAULT_RECURSION_LIMIT = 100;
-  private static final int DEFAULT_SIZE_LIMIT = 1 << 31;
+  private static final int DEFAULT_SIZE_LIMIT = 64 << 20;  // 64MB
   private static final int BUFFER_SIZE = 4096;
 
-  private static int sizeLimit = DEFAULT_SIZE_LIMIT;
-  
   private CodedInputStream(
       final byte[] buffer, final int off, final int len, boolean bufferIsImmutable) {
     this.buffer = buffer;
@@ -945,7 +944,7 @@ public final class CodedInputStream {
    *
    * @return the old limit.
    */
-  public static int setSizeLimit(final int limit) {
+  public int setSizeLimit(final int limit) {
     if (limit < 0) {
       throw new IllegalArgumentException(
         "Size limit cannot be negative: " + limit);

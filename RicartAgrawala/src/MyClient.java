@@ -5,9 +5,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.rmi.*;
-import java.util.HashMap;
-
-import com.google.protobuf.CodedInputStream;
 
 import com.example.result.ResultProto.Clock;
 import com.example.result.ResultProto.ClockMember;
@@ -16,7 +13,7 @@ import com.example.result.ResultProto.QueueElement;
 
 public class MyClient{  
 	
-	public static int total_clients = 2;
+	public static int total_clients = 3;
 	public static String my_name;
 	
 	public static int unlock(Adder node) throws RemoteException, MalformedURLException, NotBoundException{
@@ -30,6 +27,7 @@ public class MyClient{
 			System.out.println("Removed myself from the top of my queue");
 			while(node.topqueue() != null){
 				String node_name = node.topqueue().getName();
+				System.out.println("The node on top of queue right now, " + node_name);
 				if(!node_name.equals(my_name)){
 					Adder receiver_node;
 					receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + node_name);
@@ -45,14 +43,28 @@ public class MyClient{
 	}
 	
 	public static int lock(Adder node) throws RemoteException, MalformedURLException, NotBoundException{
-		Clock cur_time = node.getMyClock();
-		HashMap<String, Integer> cur_clock = cur_time.getClock();
-		cur_clock.put(my_name, cur_clock.get(my_name) + 1);
-		cur_time.setClock(cur_clock);
-		node.setMyClock(cur_time);
+		Clock.Builder new_clock = Clock.newBuilder();
+		Clock cur_clock = node.getMyClock();
+		for(int i=0;i<cur_clock.getClockCount();i++){
+			ClockMember.Builder cur_memB = ClockMember.newBuilder();
+			cur_memB.setName(cur_clock.getClock(i).getName());
+			if(cur_clock.getClock(i).getName().equals(my_name)){
+				cur_memB.setValue(cur_clock.getClock(i).getValue()+1);
+			}
+			else{
+				cur_memB.setValue(cur_clock.getClock(i).getValue());
+			}
+			ClockMember cur_mem = cur_memB.build();
+			new_clock.addClock(cur_mem);
+		}
+		
+		node.setMyClock(new_clock.build());
 		node.setRequestLock(1);
 		node.setRequestLockClock(node.getMyClock());
-		node.addqueue(new QueueElement(my_name,cur_time));
+		QueueElement.Builder new_queue_elem = QueueElement.newBuilder();
+		new_queue_elem.setName(my_name);
+		new_queue_elem.setClockValue(node.getMyClock());
+		node.addqueue(new_queue_elem.build());
 		String name = "myProg";
 		for(int i=1;i<=total_clients;i++){
 			String node_name = name + "-" + i;
@@ -60,15 +72,14 @@ public class MyClient{
 			if(!node_name.equals(my_name)){
 				Adder receiver_node;
 				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + node_name);
-				receiver_node.LockRequest(node.getName(),cur_time);
+				receiver_node.LockRequest(node.getName(),node.getMyClock());
 				System.out.println("LockRequest has returned from " + node_name + " to " + my_name);
 			}
 		}
 		System.out.println("Identified all clients and sent lock requests");
 		int cur_acks = 0;
-		while(cur_acks!=total_clients-1 || !node.topqueue().getName().equals(my_name)){
+		while(cur_acks!=total_clients-1){
 			System.out.println("Waiting for acks and being top of queue " + my_name);
-			System.out.println("Top of the queue is " + node.topqueue());
 			cur_acks = 0;
 			for(int i1=1;i1<=total_clients;i1++){
 				String node_name1 = name + "-" + i1;
@@ -86,6 +97,19 @@ public class MyClient{
 		return 1;
 	}
 	
+	public static String getClockStr(Clock clk){
+		String res = "{";
+		for(int i=0;i<clk.getClockCount();i++){
+			String name = clk.getClock(i).getName();
+			String id = name.substring(8,name.length()-8);
+			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
+		}
+		res = res.substring(0,res.length()-2);
+		System.out.println(res);
+		res += "}";
+		return res;
+	}
+	
 	public static void main(String args[]){  
 		try{
 			Adder stub= new AdderRemote("myProg-" + args[0].toString()); 
@@ -95,7 +119,7 @@ public class MyClient{
 			Thread.sleep(5000); // Wait for 5 seconds
 			int i = 0;
 			System.out.println("Hello!");
-			while(i<2){
+			while(i<5){
 				System.out.println("Please give me the lock! " + my_name);
 				Clock lock_sent_timer = stub.getMyClock();
 				System.out.println("Got clock");
@@ -105,8 +129,9 @@ public class MyClient{
 				if(!f.exists()){
 				    f.createNewFile();
 				    PrintWriter outFile = new PrintWriter(new FileWriter(f));
-				    outFile.print("1" + ":" + args[0].toString() + ":" + lock_sent_timer + "\n");
+				    outFile.print("1" + ":" + args[0].toString() + ":" + getClockStr(lock_sent_timer) + "\n");
 				    outFile.close();
+				    System.out.println("Created a new file and inserted first line");
 				}
 				else{
 					BufferedReader br = new BufferedReader(new FileReader(f));
@@ -121,8 +146,9 @@ public class MyClient{
 					String[] parts = last_line.split(":");
 					int new_counter = Integer.parseInt(parts[0]) + 1;
 					PrintWriter outFile = new PrintWriter(new FileWriter(f,true));
-					outFile.print(new_counter + ":" + args[0].toString() + ":" + lock_sent_timer + "\n");
+					outFile.print(new_counter + ":" + args[0].toString() + ":" + getClockStr(lock_sent_timer) + "\n");
 					outFile.close();
+				    System.out.println("Appended to the existing file");
 				}
 				unlock(stub);
 				System.out.println("I NO LONGER NEED THE LOCK! " + my_name);

@@ -3,12 +3,7 @@ import java.rmi.*;
 import java.rmi.server.*;
 import java.util.*;
 
-import java.util.PriorityQueue;
-
-import com.google.protobuf.CodedInputStream;
-
 import com.example.result.ResultProto.Clock;
-import com.example.result.ResultProto.Clock.Builder;
 import com.example.result.ResultProto.ClockMember;
 import com.example.result.ResultProto.Queue;
 import com.example.result.ResultProto.QueueElement;
@@ -19,15 +14,13 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Queue.Builder queue = Queue.newBuilder();
+	public Queue queue = Queue.newBuilder().build();
 	public HashMap<String, String> acks = new HashMap<String, String>();
 	public int hasLock = 0;
-	public int requestLock = 0; // This would have the sent request timestamp
-	public Clock.Builder requestLockClockB = Clock.newBuilder();
-	public Clock requestLockClock = requestLockClockB.build();
+	public int requestLock = 0;
+	public Clock requestLockClock = Clock.newBuilder().build();
 	public String name;
-	public Clock.Builder myClockB = Clock.newBuilder();
-	public Clock myClock = myClockB.build();
+	public Clock myClock = Clock.newBuilder().build();
 
 	public int getHasLock() throws RemoteException {
 		return hasLock;
@@ -62,19 +55,36 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	}
 	
 	public void addqueue(QueueElement elem) throws RemoteException {
-		queue.add(elem);
+		Queue.Builder nqueue = Queue.newBuilder();
+		for(int i=0;i<queue.getQueueCount();i++){
+			QueueElement.Builder nqueueelem = QueueElement.newBuilder();
+			nqueueelem.setName(queue.getQueue(i).getName());
+			nqueueelem.setClockValue(queue.getQueue(i).getClockValue());
+			nqueue.addQueue(nqueueelem.build());
+		}
+		nqueue.addQueue(elem);
+		queue = nqueue.build();
 	}
 	
 	public QueueElement removequeue() throws RemoteException {
-		QueueElement top = queue.peek();
-		queue.poll();
+		Queue.Builder nqueue = Queue.newBuilder();
+		for(int i=1;i<queue.getQueueCount();i++){
+			QueueElement.Builder nqueueelem = QueueElement.newBuilder();
+			nqueueelem.setName(queue.getQueue(i).getName());
+			nqueueelem.setClockValue(queue.getQueue(i).getClockValue());
+			nqueue.addQueue(nqueueelem.build());
+		}
+		QueueElement top = queue.getQueue(0);
+		queue = nqueue.build();
 		System.out.println("Remove top of queue of " + name);
 		System.out.println("Top of the queue was " + top);
 		return top;
 	}
 	
 	public QueueElement topqueue() throws RemoteException {
-		QueueElement top = queue.peek();
+		if(queue.getQueueCount()==0)
+			return null;
+		QueueElement top = queue.getQueue(0);
 		return top;
 	}
 	
@@ -97,28 +107,52 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		this.requestLockClock = clock;
 	}
 	
+	public Clock getRequestLockClock() throws RemoteException {
+		return this.requestLockClock;
+	}
+	
 	AdderRemote(String name_cur) throws RemoteException{  
 		super();
 		name = name_cur;
 		String name = "myProg";
-		for(int i=1;i<=2;i++){
+		Clock.Builder new_c = Clock.newBuilder();
+		for(int i=1;i<=3;i++){
 			String node_name = name + "-" + i;
-			this.myClock.UpdateClock(node_name, 1);
+			ClockMember.Builder new_clk = ClockMember.newBuilder();
+			new_clk.setName(node_name);
+			new_clk.setValue(1);
+			ClockMember built_clk = new_clk.build();
+			new_c.addClock(built_clk);
 		}
+		this.myClock = new_c.build();
+		System.out.println(this.myClock);
+		System.out.println("That was the initial clock!");
+	}
+	
+	public int compareClock(Clock clk1, Clock clk2){
+		int res = 1;
+		for(int i=0;i<clk1.getClockCount();i++){
+			int cur = clk1.getClock(i).getValue();
+			int cur2 = clk2.getClock(i).getValue();
+			if(cur2>cur){
+				res = 0;
+			}
+		}
+		return res;
 	}
 	
 	public int UnlockRequest(String sender, Clock clock) throws RemoteException{
-		QueueElement top = queue.peek();
+		QueueElement top = topqueue();
 		if(top.getName().equals(sender)){
-			queue.poll();
+			removequeue();
 			System.out.println("Removed " + sender + "from the queue of " + name);
 			return 0;
 		}
 		else{
 			System.out.println("Top not the node which sent the request!");
-			while(top != null && clock.compareTo(top.getClock()) == 1 && !top.getName().equals(name)){
-				queue.poll();
-				top = queue.peek();
+			while(top != null && compareClock(clock,top.getClockValue()) == 1 && !top.getName().equals(name)){
+				removequeue();
+				top = topqueue();
 			}
 			return 0;
 		}
@@ -133,25 +167,51 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	public int LockRequest(String sender, Clock clock) throws RemoteException, MalformedURLException, NotBoundException{
 		System.out.println("LockRequest received from " + sender + " to " + name);
 		//myClock = Math.max(myClock,clock) + 1;
+		Clock.Builder new_clock = Clock.newBuilder();
+		Clock cur_clock = myClock;
+		for(int i=0;i<cur_clock.getClockCount();i++){
+			ClockMember.Builder cur_memB = ClockMember.newBuilder();
+			cur_memB.setName(cur_clock.getClock(i).getName());
+			if(cur_clock.getClock(i).getName().equals(name)){
+				int vals1 = cur_clock.getClock(i).getValue();
+				int vals2 = clock.getClock(i).getValue();
+				cur_memB.setValue(Math.max(vals1, vals2)+1);
+			}
+			else{
+				int vals1 = cur_clock.getClock(i).getValue();
+				int vals2 = clock.getClock(i).getValue();
+				cur_memB.setValue(Math.max(vals1,vals2));
+			}
+			ClockMember cur_mem = cur_memB.build();
+			new_clock.addClock(cur_mem);
+		}
+		
+		myClock = new_clock.build();
 		if(requestLock == 0){
 			Adder receiver_node;
 			receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
 			receiver_node.SendAckRequest(name);
 		}
 		else if(hasLock != 0){
-			QueueElement elem = new QueueElement(sender,clock);
+			QueueElement.Builder elemB = QueueElement.newBuilder();
+			elemB.setClockValue(clock);
+			elemB.setName(sender);
+			QueueElement elem = elemB.build();
 			System.out.println("Added to queue");
-			queue.add(elem);
+			addqueue(elem);
 		}
 		else if(requestLock != 0){ // requestLock stores the time
-			if(requestLockClock.compareTo(clock) == 1){
+			if(compareClock(requestLockClock,clock) == 1){
 				Adder receiver_node;
 				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
 				receiver_node.SendAckRequest(name);
 			}
 			else{
-				QueueElement elem = new QueueElement(sender,clock);
-				queue.add(elem);
+				QueueElement.Builder elemB = QueueElement.newBuilder();
+				elemB.setClockValue(clock);
+				elemB.setName(sender);
+				QueueElement elem = elemB.build();
+				addqueue(elem);
 				System.out.println("Added to queue");
 				return 0;
 			}

@@ -1,8 +1,5 @@
 import java.net.MalformedURLException;
-import java.rmi.*; 
-import java.util.PriorityQueue;
-
-import com.google.protobuf.CodedInputStream;
+import java.rmi.*;
 
 import com.example.result.ResultProto.Clock;
 import com.example.result.ResultProto.ClockMember;
@@ -16,9 +13,8 @@ public interface Adder extends Remote{
 			throws RemoteException;
 	public int UnlockRequest(String receiver, Clock clock)
 			throws RemoteException;
+	public Clock getRequestLockClock() throws RemoteException;
 	public void setRequestLockClock(Clock clock) throws RemoteException;
-	public PriorityQueue<QueueElement> getQueue() throws RemoteException;
-	public void setQueue(PriorityQueue<QueueElement> queue) throws RemoteException;
 	public int getHasLock() throws RemoteException;
 	public void setHasLock(int hasLock) throws RemoteException;
 	public int getRequestLock() throws RemoteException;

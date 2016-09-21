@@ -1,4 +1,3 @@
-syntax="proto2";
 option java_package = "com.example.result";
 option java_outer_classname = "ResultProto";
 message ClockMember {
