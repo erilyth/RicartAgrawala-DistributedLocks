@@ -1,3 +1,4 @@
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.rmi.*;  
 import java.rmi.server.*;
@@ -20,6 +21,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	public int requestLock = 0;
 	public Clock requestLockClock = Clock.newBuilder().build();
 	public String name;
+	public static PrintWriter outwriter;
 	public Clock myClock = Clock.newBuilder().build();
 
 	public int getHasLock() throws RemoteException {
@@ -76,8 +78,8 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		}
 		QueueElement top = queue.getQueue(0);
 		queue = nqueue.build();
-		System.out.println("Remove top of queue of " + name);
-		System.out.println("Top of the queue was " + top);
+		//System.out.println("Remove top of queue of " + name);
+		//System.out.println("Top of the queue was " + top);
 		return top;
 	}
 	
@@ -89,8 +91,8 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	}
 	
 	public int getack(String myname) throws RemoteException {
-		System.out.println("Check if ack of " + myname + " is there in " + name);
-		System.out.println(acks.get(myname));
+		//System.out.println("Check if ack of " + myname + " is there in " + name);
+		//System.out.println(acks.get(myname));
 		if(acks.get(myname)!= null && acks.get(myname).equals("1")){
 			return 1;
 		}
@@ -111,12 +113,13 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		return this.requestLockClock;
 	}
 	
-	AdderRemote(String name_cur) throws RemoteException{  
+	AdderRemote(String name_cur, int num_clients, PrintWriter writer) throws RemoteException{  
 		super();
 		name = name_cur;
 		String name = "myProg";
+		outwriter = writer;
 		Clock.Builder new_c = Clock.newBuilder();
-		for(int i=1;i<=2;i++){
+		for(int i=1;i<=num_clients;i++){
 			String node_name = name + "-" + i;
 			ClockMember.Builder new_clk = ClockMember.newBuilder();
 			new_clk.setName(node_name);
@@ -125,8 +128,8 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 			new_c.addClock(built_clk);
 		}
 		this.myClock = new_c.build();
-		System.out.println(this.myClock);
-		System.out.println("That was the initial clock!");
+		//System.out.println(this.myClock);
+		//System.out.println("That was the initial clock!");
 	}
 	
 	public int compareClock(Clock clk1, Clock clk2){
@@ -141,15 +144,39 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		return res;
 	}
 	
+	public static String getClockStr(Clock clk){
+		String res = "{";
+		//System.out.println("Getting clock string!");
+		for(int i=0;i<clk.getClockCount();i++){
+			//System.out.println(i);
+			String name = clk.getClock(i).getName();
+			//System.out.println(name);
+			String id = "";
+			for(int k=0;k<name.length();k++){
+				if(name.charAt(k)>='0' && name.charAt(k)<='9'){
+					id += name.charAt(k);
+				}
+			}
+			//System.out.println(id);
+			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
+			//System.out.println(res);
+		}
+		res = res.substring(0,res.length()-2);
+		//System.out.println(res);
+		res += "}";
+		return res;
+	}
+	
 	public int UnlockRequest(String sender, Clock clock) throws RemoteException{
+		outwriter.print("Received UnlockRequest() from peer, My ID: " + name + ", Sender ID: " + sender + ", Unlock Request Clock: " + getClockStr(clock) + ", My Current Clock: " + getClockStr(myClock) + "\n");
 		QueueElement top = topqueue();
 		if(top.getName().equals(sender)){
 			removequeue();
-			System.out.println("Removed " + sender + "from the queue of " + name);
+			//System.out.println("Removed " + sender + "from the queue of " + name);
 			return 0;
 		}
 		else{
-			System.out.println("Top not the node which sent the request!");
+			//System.out.println("Top not the node which sent the request!");
 			while(top != null && compareClock(clock,top.getClockValue()) == 1 && !top.getName().equals(name)){
 				removequeue();
 				top = topqueue();
@@ -159,14 +186,16 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	}
 	
 	public int SendAckRequest(String sender) throws RemoteException{
-		System.out.println("Ack received from " + sender + " to " + name);
+		//System.out.println("Ack received from " + sender + " to " + name);
+		outwriter.print("Received SendAckRequest() from peer, My ID: " + name + ", Sender ID: " + sender + ", Lock Clock: " + getClockStr(requestLockClock) + "\n");
 		acks.put(sender, "1");
 		return 0;
 	}
 	
 	public int LockRequest(String sender, Clock clock) throws RemoteException, MalformedURLException, NotBoundException{
-		System.out.println("LockRequest received from " + sender + " to " + name);
+		//System.out.println("LockRequest received from " + sender + " to " + name);
 		//myClock = Math.max(myClock,clock) + 1;
+		outwriter.print("Received LockRequest() from peer, Peer ID: " + sender + ", My ID: " + name + ", Lock Request Clock: " + getClockStr(clock) + ", My Current Clock: " + getClockStr(myClock) + "\n");
 		Clock.Builder new_clock = Clock.newBuilder();
 		Clock cur_clock = myClock;
 		for(int i=0;i<cur_clock.getClockCount();i++){
@@ -197,7 +226,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 			elemB.setClockValue(clock);
 			elemB.setName(sender);
 			QueueElement elem = elemB.build();
-			System.out.println("Added to queue");
+			//System.out.println("Added to queue");
 			addqueue(elem);
 		}
 		else if(requestLock != 0){ // requestLock stores the time
@@ -212,7 +241,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 				elemB.setName(sender);
 				QueueElement elem = elemB.build();
 				addqueue(elem);
-				System.out.println("Added to queue");
+				//System.out.println("Added to queue");
 				return 0;
 			}
 		}

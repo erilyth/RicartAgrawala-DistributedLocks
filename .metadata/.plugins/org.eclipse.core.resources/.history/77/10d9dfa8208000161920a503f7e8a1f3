@@ -1,0 +1,251 @@
+import java.io.PrintWriter;
+import java.net.MalformedURLException;
+import java.rmi.*;  
+import java.rmi.server.*;
+import java.util.*;
+
+import com.example.result.ResultProto.Clock;
+import com.example.result.ResultProto.ClockMember;
+import com.example.result.ResultProto.Queue;
+import com.example.result.ResultProto.QueueElement;
+
+public class AdderRemote extends UnicastRemoteObject implements Adder{  
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public Queue queue = Queue.newBuilder().build();
+	public HashMap<String, String> acks = new HashMap<String, String>();
+	public int hasLock = 0;
+	public int requestLock = 0;
+	public Clock requestLockClock = Clock.newBuilder().build();
+	public String name;
+	public static PrintWriter outwriter;
+	public Clock myClock = Clock.newBuilder().build();
+
+	public int getHasLock() throws RemoteException {
+		return hasLock;
+	}
+
+	public void setHasLock(int hasLock) throws RemoteException {
+		this.hasLock = hasLock;
+	}
+
+	public int getRequestLock() throws RemoteException {
+		return requestLock;
+	}
+
+	public void setRequestLock(int requestLock) throws RemoteException {
+		this.requestLock = requestLock;
+	}
+
+	public String getName() throws RemoteException {
+		return name;
+	}
+
+	public void setName(String name) throws RemoteException {
+		this.name = name;
+	}
+
+	public Clock getMyClock() throws RemoteException {
+		return myClock;
+	}
+
+	public void setMyClock(Clock clock) throws RemoteException {
+		this.myClock = clock;
+	}
+	
+	public void addqueue(QueueElement elem) throws RemoteException {
+		Queue.Builder nqueue = Queue.newBuilder();
+		for(int i=0;i<queue.getQueueCount();i++){
+			QueueElement.Builder nqueueelem = QueueElement.newBuilder();
+			nqueueelem.setName(queue.getQueue(i).getName());
+			nqueueelem.setClockValue(queue.getQueue(i).getClockValue());
+			nqueue.addQueue(nqueueelem.build());
+		}
+		nqueue.addQueue(elem);
+		queue = nqueue.build();
+	}
+	
+	public QueueElement removequeue() throws RemoteException {
+		Queue.Builder nqueue = Queue.newBuilder();
+		for(int i=1;i<queue.getQueueCount();i++){
+			QueueElement.Builder nqueueelem = QueueElement.newBuilder();
+			nqueueelem.setName(queue.getQueue(i).getName());
+			nqueueelem.setClockValue(queue.getQueue(i).getClockValue());
+			nqueue.addQueue(nqueueelem.build());
+		}
+		QueueElement top = queue.getQueue(0);
+		queue = nqueue.build();
+		//System.out.println("Remove top of queue of " + name);
+		//System.out.println("Top of the queue was " + top);
+		return top;
+	}
+	
+	public QueueElement topqueue() throws RemoteException {
+		if(queue.getQueueCount()==0)
+			return null;
+		QueueElement top = queue.getQueue(0);
+		return top;
+	}
+	
+	public int getack(String myname) throws RemoteException {
+		//System.out.println("Check if ack of " + myname + " is there in " + name);
+		//System.out.println(acks.get(myname));
+		if(acks.get(myname)!= null && acks.get(myname).equals("1")){
+			return 1;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public void setack(String name) throws RemoteException {
+		acks.put(name, "1");
+	}
+	
+	public void setRequestLockClock(Clock clock) throws RemoteException {
+		this.requestLockClock = clock;
+	}
+	
+	public Clock getRequestLockClock() throws RemoteException {
+		return this.requestLockClock;
+	}
+	
+	AdderRemote(String name_cur, int num_clients, PrintWriter writer) throws RemoteException{  
+		super();
+		name = name_cur;
+		String name = "myProg";
+		outwriter = writer;
+		Clock.Builder new_c = Clock.newBuilder();
+		for(int i=1;i<=num_clients;i++){
+			String node_name = name + "-" + i;
+			ClockMember.Builder new_clk = ClockMember.newBuilder();
+			new_clk.setName(node_name);
+			new_clk.setValue(1);
+			ClockMember built_clk = new_clk.build();
+			new_c.addClock(built_clk);
+		}
+		this.myClock = new_c.build();
+		//System.out.println(this.myClock);
+		//System.out.println("That was the initial clock!");
+	}
+	
+	public int compareClock(Clock clk1, Clock clk2){
+		int res = 1;
+		for(int i=0;i<clk1.getClockCount();i++){
+			int cur = clk1.getClock(i).getValue();
+			int cur2 = clk2.getClock(i).getValue();
+			if(cur2>cur){
+				res = 0;
+			}
+		}
+		return res;
+	}
+	
+	public static String getClockStr(Clock clk){
+		String res = "{";
+		//System.out.println("Getting clock string!");
+		for(int i=0;i<clk.getClockCount();i++){
+			//System.out.println(i);
+			String name = clk.getClock(i).getName();
+			//System.out.println(name);
+			String id = "";
+			for(int k=0;k<name.length();k++){
+				if(name.charAt(k)>='0' && name.charAt(k)<='9'){
+					id += name.charAt(k);
+				}
+			}
+			//System.out.println(id);
+			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
+			//System.out.println(res);
+		}
+		res = res.substring(0,res.length()-2);
+		//System.out.println(res);
+		res += "}";
+		return res;
+	}
+	
+	public int UnlockRequest(String sender, Clock clock) throws RemoteException{
+		outwriter.print("Received UnlockRequest() from peer, My ID: " + name + ", Sender ID: " + sender + ", Unlock Request Clock: " + getClockStr(clock) + ", My Current Clock: " + getClockStr(myClock) + "\n");
+		QueueElement top = topqueue();
+		if(top.getName().equals(sender)){
+			removequeue();
+			//System.out.println("Removed " + sender + "from the queue of " + name);
+			return 0;
+		}
+		else{
+			//System.out.println("Top not the node which sent the request!");
+			while(top != null && compareClock(clock,top.getClockValue()) == 1 && !top.getName().equals(name)){
+				removequeue();
+				top = topqueue();
+			}
+			return 0;
+		}
+	}
+	
+	public int SendAckRequest(String sender) throws RemoteException{
+		//System.out.println("Ack received from " + sender + " to " + name);
+		outwriter.print("Received SendAckRequest() from peer, My ID: " + name + ", Sender ID: " + sender + ", Lock Clock: " + getClockStr(requestLockClock));
+		acks.put(sender, "1");
+		return 0;
+	}
+	
+	public int LockRequest(String sender, Clock clock) throws RemoteException, MalformedURLException, NotBoundException{
+		//System.out.println("LockRequest received from " + sender + " to " + name);
+		//myClock = Math.max(myClock,clock) + 1;
+		outwriter.print("Received LockRequest() from peer, Peer ID: " + sender + ", My ID: " + name + ", Lock Request Clock: " + getClockStr(clock) + ", My Current Clock: " + getClockStr(myClock));
+		Clock.Builder new_clock = Clock.newBuilder();
+		Clock cur_clock = myClock;
+		for(int i=0;i<cur_clock.getClockCount();i++){
+			ClockMember.Builder cur_memB = ClockMember.newBuilder();
+			cur_memB.setName(cur_clock.getClock(i).getName());
+			if(cur_clock.getClock(i).getName().equals(name)){
+				int vals1 = cur_clock.getClock(i).getValue();
+				int vals2 = clock.getClock(i).getValue();
+				cur_memB.setValue(Math.max(vals1, vals2)+1);
+			}
+			else{
+				int vals1 = cur_clock.getClock(i).getValue();
+				int vals2 = clock.getClock(i).getValue();
+				cur_memB.setValue(Math.max(vals1,vals2));
+			}
+			ClockMember cur_mem = cur_memB.build();
+			new_clock.addClock(cur_mem);
+		}
+		
+		myClock = new_clock.build();
+		if(requestLock == 0){
+			Adder receiver_node;
+			receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
+			receiver_node.SendAckRequest(name);
+		}
+		else if(hasLock != 0){
+			QueueElement.Builder elemB = QueueElement.newBuilder();
+			elemB.setClockValue(clock);
+			elemB.setName(sender);
+			QueueElement elem = elemB.build();
+			//System.out.println("Added to queue");
+			addqueue(elem);
+		}
+		else if(requestLock != 0){ // requestLock stores the time
+			if(compareClock(requestLockClock,clock) == 1){
+				Adder receiver_node;
+				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + sender);
+				receiver_node.SendAckRequest(name);
+			}
+			else{
+				QueueElement.Builder elemB = QueueElement.newBuilder();
+				elemB.setClockValue(clock);
+				elemB.setName(sender);
+				QueueElement elem = elemB.build();
+				addqueue(elem);
+				//System.out.println("Added to queue");
+				return 0;
+			}
+		}
+		return 0;
+	}
+
+} 

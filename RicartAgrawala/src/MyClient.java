@@ -15,26 +15,32 @@ public class MyClient{
 	
 	public static int total_clients = 2;
 	public static String my_name;
+	public static File outfilef;
+	public static PrintWriter outwriter;
+	public static Clock lock_sent_timer;
 	
 	public static int unlock(Adder node) throws RemoteException, MalformedURLException, NotBoundException{
+		outwriter.print("Unlock() request invoked, Lock Clock: "  + getClockStr(lock_sent_timer) + "\n");
 		if(node.topqueue().getName() != my_name){
-			System.out.println("Error, you are not on top of the queue!");
+			//System.out.println("Error, you are not on top of the queue!");
 		}
 		else{
 			node.setHasLock(0);
 			node.setRequestLock(0);
 			node.removequeue();
-			System.out.println("Removed myself from the top of my queue");
+			//System.out.println("Removed myself from the top of my queue");
 			while(node.topqueue() != null){
 				String node_name = node.topqueue().getName();
-				System.out.println("The node on top of queue right now, " + node_name);
+				//System.out.println("The node on top of queue right now, " + node_name);
 				if(!node_name.equals(my_name)){
 					Adder receiver_node;
 					receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + node_name);
-					System.out.println("Will send UnlockRequest to " + node_name + " from " + my_name);
+					//System.out.println("Will send UnlockRequest to " + node_name + " from " + my_name);
+					outwriter.print("Sending UnlockRequest() to peer, My ID: " + my_name + ", Peer ID: " + node_name + ", Lock Clock: " + getClockStr(lock_sent_timer) + "\n");
 					receiver_node.UnlockRequest(node.getName(),node.getMyClock());
+					outwriter.print("Sending SendAckRequest() to peer, My ID: " + my_name + ", Peer ID: " + node_name + ", Lock Clock: " + getClockStr(lock_sent_timer) + "\n");
 					receiver_node.SendAckRequest(node.getName());
-					System.out.println("Sent and got back from UnlockRequest to " + node_name + " from " + my_name);
+					//System.out.println("Sent and got back from UnlockRequest to " + node_name + " from " + my_name);
 				}
 				node.removequeue();
 			}
@@ -61,6 +67,7 @@ public class MyClient{
 		node.setMyClock(new_clock.build());
 		node.setRequestLock(1);
 		node.setRequestLockClock(node.getMyClock());
+		lock_sent_timer = node.getRequestLockClock();
 		QueueElement.Builder new_queue_elem = QueueElement.newBuilder();
 		new_queue_elem.setName(my_name);
 		new_queue_elem.setClockValue(node.getMyClock());
@@ -68,30 +75,31 @@ public class MyClient{
 		String name = "myProg";
 		for(int i=1;i<=total_clients;i++){
 			String node_name = name + "-" + i;
-			System.out.println("Try to find client " + node_name);
+			//System.out.println("Try to find client " + node_name);
 			if(!node_name.equals(my_name)){
 				Adder receiver_node;
 				receiver_node = (Adder)Naming.lookup("rmi://localhost:5000/" + node_name);
+				outwriter.print("Sending LockRequest() to peer, Receiver ID: " + node_name + ", Sender ID: " + my_name + ", Lock Clock: " + getClockStr(lock_sent_timer) + ", Current Clock: " + getClockStr(node.getMyClock()) + "\n");
 				receiver_node.LockRequest(node.getName(),node.getMyClock());
-				System.out.println("LockRequest has returned from " + node_name + " to " + my_name);
+				//System.out.println("LockRequest has returned from " + node_name + " to " + my_name);
 			}
 		}
-		System.out.println("Identified all clients and sent lock requests");
+		//System.out.println("Identified all clients and sent lock requests");
 		int cur_acks = 0;
 		while(cur_acks!=total_clients-1){
-			System.out.println("Waiting for acks and being top of queue " + my_name);
+			//System.out.println("Waiting for acks and being top of queue " + my_name);
 			cur_acks = 0;
 			for(int i1=1;i1<=total_clients;i1++){
 				String node_name1 = name + "-" + i1;
-				System.out.println("Check ack of " + node_name1);
+				//System.out.println("Check ack of " + node_name1);
 				if(!node_name1.equals(my_name)){
 					if(node.getack(node_name1) == 1){
 						cur_acks += 1;
-						System.out.println("Have ack" + node_name1);
+						//System.out.println("Have ack" + node_name1);
 					}
 				}
 			}
-			System.out.println(cur_acks);
+			//System.out.println(cur_acks);
 		}
 		node.setHasLock(1);
 		return 1;
@@ -99,49 +107,55 @@ public class MyClient{
 	
 	public static String getClockStr(Clock clk){
 		String res = "{";
-		System.out.println("Getting clock string!");
+		//System.out.println("Getting clock string!");
 		for(int i=0;i<clk.getClockCount();i++){
-			System.out.println(i);
+			//System.out.println(i);
 			String name = clk.getClock(i).getName();
-			System.out.println(name);
+			//System.out.println(name);
 			String id = "";
 			for(int k=0;k<name.length();k++){
 				if(name.charAt(k)>='0' && name.charAt(k)<='9'){
 					id += name.charAt(k);
 				}
 			}
-			System.out.println(id);
+			//System.out.println(id);
 			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
-			System.out.println(res);
+			//System.out.println(res);
 		}
 		res = res.substring(0,res.length()-2);
-		System.out.println(res);
+		//System.out.println(res);
 		res += "}";
 		return res;
 	}
 	
 	public static void main(String args[]){  
 		try{
-			Adder stub= new AdderRemote("myProg-" + args[0].toString()); 
+			outfilef = new File("myProg." + args[0] + ".out");
+			if(!outfilef.exists()){
+				outfilef.createNewFile();
+			}
+			outwriter = new PrintWriter(new FileWriter(outfilef, true));
+			total_clients = Integer.parseInt(args[1]);
+			Adder stub= new AdderRemote("myProg-" + args[0].toString(), total_clients, outwriter); 
 			my_name = "myProg-" + args[0].toString();
 			Naming.rebind("rmi://localhost:5000/myProg-" + args[0].toString(),stub);
 			Thread.sleep(5000); // Wait for 5 seconds
 			int i = 0;
-			System.out.println("Hello!");
-			while(i<5){
-				System.out.println("Please give me the lock! " + my_name);
-				System.out.println("Got clock");
+			//System.out.println("Hello!");
+			while(i<6){
+				//System.out.println("Please give me the lock! " + my_name);
+				//System.out.println("Got clock");
 				lock(stub);
-				Clock lock_sent_timer = stub.getMyClock();
-				System.out.println("YAY I HAVE THE LOCK! " + my_name);
-				String filename = "output.txt";
+				outwriter.print("Lock request has been granted, " + "Lock Clock: " + getClockStr(lock_sent_timer) + "\n");
+				//System.out.println("YAY I HAVE THE LOCK! " + my_name);
+				String filename = args[2]; // Filename is a string
 				File f = new File(filename);
 				if(!f.exists()){
 				    f.createNewFile();
 				    PrintWriter outFile = new PrintWriter(new FileWriter(f));
 				    outFile.print("1" + ":" + args[0].toString() + ":" + getClockStr(lock_sent_timer) + "\n");
 				    outFile.close();
-				    System.out.println("Created a new file and inserted first line");
+				    //System.out.println("Created a new file and inserted first line");
 				}
 				else{
 					BufferedReader br = new BufferedReader(new FileReader(f));
@@ -158,14 +172,15 @@ public class MyClient{
 					PrintWriter outFile = new PrintWriter(new FileWriter(f,true));
 					outFile.print(new_counter + ":" + args[0].toString() + ":" + getClockStr(lock_sent_timer) + "\n");
 					outFile.close();
-				    System.out.println("Appended to the existing file");
+				    //System.out.println("Appended to the existing file");
 				}
 				unlock(stub);
-				System.out.println("I NO LONGER NEED THE LOCK! " + my_name);
+				//System.out.println("I NO LONGER NEED THE LOCK! " + my_name);
 				int randomNum = 1 + (int)(Math.random() * 2 * total_clients); 
 				Thread.sleep(randomNum * 1000);
 				i++;
 			}
+			outwriter.close();
 			System.out.println("Processing has been finished on " + my_name);
 			System.out.println("Press Ctrl+C to exit");
 		}catch(Exception e){
