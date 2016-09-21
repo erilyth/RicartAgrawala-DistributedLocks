@@ -104,12 +104,7 @@ public class MyClient{
 			System.out.println(i);
 			String name = clk.getClock(i).getName();
 			System.out.println(name);
-			String id = "";
-			for(int k=0;k<name.length();k++){
-				if(name.charAt(k)>='0' && name.charAt(k)<='9'){
-					id += name.charAt(k);
-				}
-			}
+			String id = name.substring(name.length()-7);
 			System.out.println(id);
 			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
 			System.out.println(res);

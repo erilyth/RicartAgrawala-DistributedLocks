@@ -116,7 +116,7 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 		name = name_cur;
 		String name = "myProg";
 		Clock.Builder new_c = Clock.newBuilder();
-		for(int i=1;i<=2;i++){
+		for(int i=1;i<=3;i++){
 			String node_name = name + "-" + i;
 			ClockMember.Builder new_clk = ClockMember.newBuilder();
 			new_clk.setName(node_name);

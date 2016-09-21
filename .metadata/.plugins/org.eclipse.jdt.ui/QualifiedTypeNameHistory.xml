@@ -8,5 +8,8 @@
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.example.result.ResultProto.Queue.Builder"/>
+<fullyQualifiedTypeName name="com.example.result.ResultProto.QueueElement"/>
+<fullyQualifiedTypeName name="com.example.result.ResultProto.QueueElement.Builder"/>
 <fullyQualifiedTypeName name="com.example.result.ResultProto.Clock.Builder"/>
 </qualifiedTypeNameHistroy>

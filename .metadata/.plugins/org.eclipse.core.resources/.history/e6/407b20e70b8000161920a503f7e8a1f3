@@ -99,18 +99,9 @@ public class MyClient{
 	
 	public static String getClockStr(Clock clk){
 		String res = "{";
-		System.out.println("Getting clock string!");
 		for(int i=0;i<clk.getClockCount();i++){
-			System.out.println(i);
 			String name = clk.getClock(i).getName();
-			System.out.println(name);
-			String id = "";
-			for(int k=0;k<name.length();k++){
-				if(name.charAt(k)>='0' && name.charAt(k)<='9'){
-					id += name.charAt(k);
-				}
-			}
-			System.out.println(id);
+			String id = name.substring(8,name.length()-8);
 			res += "(" + id + ", " + clk.getClock(i).getValue() + "), ";
 			System.out.println(res);
 		}
@@ -134,7 +125,7 @@ public class MyClient{
 				lock(stub);
 				Clock lock_sent_timer = stub.getMyClock();
 				System.out.println("YAY I HAVE THE LOCK! " + my_name);
-				String filename = "output.txt";
+				String filename = "output_final.txt";
 				File f = new File(filename);
 				if(!f.exists()){
 				    f.createNewFile();
