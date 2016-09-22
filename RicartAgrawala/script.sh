@@ -30,9 +30,12 @@ echo 'Compiled Required files'
 rmic -classpath bin/ -d bin/ AdderRemote
 cd bin
 rmiregistry 5000 &
+echo 'RMIC started'
+sleep 0.05
 cd ..
 
 for i in `seq 1 $n`;
 do
   java -cp bin/ MyClient $i $n $filename &
+  sleep 0.2
 done

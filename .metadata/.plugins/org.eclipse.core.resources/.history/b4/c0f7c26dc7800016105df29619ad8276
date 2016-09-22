@@ -142,7 +142,7 @@ public class MyClient{
 			Thread.sleep(5000); // Wait for 5 seconds
 			int i = 0;
 			//System.out.println("Hello!");
-			while(i<100){
+			while(i<6){
 				//System.out.println("Please give me the lock! " + my_name);
 				//System.out.println("Got clock");
 				lock(stub);
