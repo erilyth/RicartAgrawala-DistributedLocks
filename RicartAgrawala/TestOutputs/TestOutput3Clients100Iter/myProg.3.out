@@ -1,0 +1,800 @@
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 2), (2, 1), (3, 1)}, My Current Clock: {(1, 1), (2, 1), (3, 1)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 2), (2, 3), (3, 1)}, My Current Clock: {(1, 2), (2, 1), (3, 2)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 4)}, Current Clock: {(1, 2), (2, 3), (3, 4)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 2), (2, 3), (3, 4)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 4)}, Current Clock: {(1, 2), (2, 3), (3, 4)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 2), (2, 3), (3, 4)}
+Lock request has been granted, Lock Clock: {(1, 2), (2, 3), (3, 4)}
+Unlock() request invoked, Lock Clock: {(1, 2), (2, 3), (3, 4)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 5)}, Current Clock: {(1, 2), (2, 3), (3, 5)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 2), (2, 3), (3, 5)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 5)}, Current Clock: {(1, 2), (2, 3), (3, 5)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 2), (2, 3), (3, 5)}
+Lock request has been granted, Lock Clock: {(1, 2), (2, 3), (3, 5)}
+Unlock() request invoked, Lock Clock: {(1, 2), (2, 3), (3, 5)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 6)}, Current Clock: {(1, 2), (2, 3), (3, 6)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 2), (2, 3), (3, 6)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 2), (2, 3), (3, 6)}, Current Clock: {(1, 2), (2, 3), (3, 6)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 2), (2, 3), (3, 6)}
+Lock request has been granted, Lock Clock: {(1, 2), (2, 3), (3, 6)}
+Unlock() request invoked, Lock Clock: {(1, 2), (2, 3), (3, 6)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 2), (2, 7), (3, 6)}, My Current Clock: {(1, 2), (2, 3), (3, 6)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 8), (2, 7), (3, 6)}, My Current Clock: {(1, 2), (2, 7), (3, 7)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 8), (2, 7), (3, 9)}, Current Clock: {(1, 8), (2, 7), (3, 9)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 8), (2, 7), (3, 9)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 8), (2, 7), (3, 9)}, Current Clock: {(1, 8), (2, 7), (3, 9)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 8), (2, 7), (3, 9)}
+Lock request has been granted, Lock Clock: {(1, 8), (2, 7), (3, 9)}
+Unlock() request invoked, Lock Clock: {(1, 8), (2, 7), (3, 9)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 10), (2, 7), (3, 9)}, My Current Clock: {(1, 8), (2, 7), (3, 9)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 10), (2, 7), (3, 11)}, Current Clock: {(1, 10), (2, 7), (3, 11)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 10), (2, 7), (3, 11)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 10), (2, 7), (3, 11)}, Current Clock: {(1, 10), (2, 7), (3, 11)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 10), (2, 7), (3, 11)}
+Lock request has been granted, Lock Clock: {(1, 10), (2, 7), (3, 11)}
+Unlock() request invoked, Lock Clock: {(1, 10), (2, 7), (3, 11)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 12), (2, 7), (3, 11)}, My Current Clock: {(1, 10), (2, 7), (3, 11)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 12), (2, 13), (3, 11)}, My Current Clock: {(1, 12), (2, 7), (3, 12)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 12), (2, 13), (3, 14)}, Current Clock: {(1, 12), (2, 13), (3, 14)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 12), (2, 13), (3, 14)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 12), (2, 13), (3, 14)}, Current Clock: {(1, 12), (2, 13), (3, 14)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 12), (2, 13), (3, 14)}
+Lock request has been granted, Lock Clock: {(1, 12), (2, 13), (3, 14)}
+Unlock() request invoked, Lock Clock: {(1, 12), (2, 13), (3, 14)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 12), (2, 15), (3, 14)}, My Current Clock: {(1, 12), (2, 13), (3, 14)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 16), (2, 15), (3, 14)}, My Current Clock: {(1, 12), (2, 15), (3, 15)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 16), (2, 15), (3, 17)}, Current Clock: {(1, 16), (2, 15), (3, 17)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 16), (2, 15), (3, 17)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 16), (2, 15), (3, 17)}, Current Clock: {(1, 16), (2, 15), (3, 17)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 16), (2, 15), (3, 17)}
+Lock request has been granted, Lock Clock: {(1, 16), (2, 15), (3, 17)}
+Unlock() request invoked, Lock Clock: {(1, 16), (2, 15), (3, 17)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 18), (2, 15), (3, 17)}, My Current Clock: {(1, 16), (2, 15), (3, 17)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 18), (2, 19), (3, 17)}, My Current Clock: {(1, 18), (2, 15), (3, 18)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 18), (2, 19), (3, 20)}, Current Clock: {(1, 18), (2, 19), (3, 20)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 18), (2, 19), (3, 20)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 18), (2, 19), (3, 20)}, Current Clock: {(1, 18), (2, 19), (3, 20)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 18), (2, 19), (3, 20)}
+Lock request has been granted, Lock Clock: {(1, 18), (2, 19), (3, 20)}
+Unlock() request invoked, Lock Clock: {(1, 18), (2, 19), (3, 20)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 21), (2, 19), (3, 20)}, My Current Clock: {(1, 18), (2, 19), (3, 20)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 21), (2, 22), (3, 20)}, My Current Clock: {(1, 21), (2, 19), (3, 21)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 23), (2, 22), (3, 20)}, My Current Clock: {(1, 21), (2, 22), (3, 22)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 23), (2, 24), (3, 20)}, My Current Clock: {(1, 23), (2, 22), (3, 23)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 23), (2, 24), (3, 25)}, Current Clock: {(1, 23), (2, 24), (3, 25)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 23), (2, 24), (3, 25)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 23), (2, 24), (3, 25)}, Current Clock: {(1, 23), (2, 24), (3, 25)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 23), (2, 24), (3, 25)}
+Lock request has been granted, Lock Clock: {(1, 23), (2, 24), (3, 25)}
+Unlock() request invoked, Lock Clock: {(1, 23), (2, 24), (3, 25)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 23), (2, 26), (3, 25)}, My Current Clock: {(1, 23), (2, 24), (3, 25)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 27), (2, 26), (3, 25)}, My Current Clock: {(1, 23), (2, 26), (3, 26)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 27), (2, 26), (3, 28)}, Current Clock: {(1, 27), (2, 26), (3, 28)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 27), (2, 26), (3, 28)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 27), (2, 26), (3, 28)}, Current Clock: {(1, 27), (2, 26), (3, 28)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 27), (2, 26), (3, 28)}
+Lock request has been granted, Lock Clock: {(1, 27), (2, 26), (3, 28)}
+Unlock() request invoked, Lock Clock: {(1, 27), (2, 26), (3, 28)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 29), (2, 26), (3, 28)}, My Current Clock: {(1, 27), (2, 26), (3, 28)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 29), (2, 30), (3, 28)}, My Current Clock: {(1, 29), (2, 26), (3, 29)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 29), (2, 30), (3, 31)}, Current Clock: {(1, 29), (2, 30), (3, 31)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 29), (2, 30), (3, 31)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 29), (2, 30), (3, 31)}, Current Clock: {(1, 29), (2, 30), (3, 31)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 29), (2, 30), (3, 31)}
+Lock request has been granted, Lock Clock: {(1, 29), (2, 30), (3, 31)}
+Unlock() request invoked, Lock Clock: {(1, 29), (2, 30), (3, 31)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 32), (2, 30), (3, 31)}, My Current Clock: {(1, 29), (2, 30), (3, 31)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 32), (2, 33), (3, 31)}, My Current Clock: {(1, 32), (2, 30), (3, 32)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 34), (2, 33), (3, 31)}, My Current Clock: {(1, 32), (2, 33), (3, 33)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 34), (2, 33), (3, 35)}, Current Clock: {(1, 34), (2, 33), (3, 35)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 34), (2, 33), (3, 35)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 34), (2, 33), (3, 35)}, Current Clock: {(1, 34), (2, 33), (3, 35)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 34), (2, 33), (3, 35)}
+Lock request has been granted, Lock Clock: {(1, 34), (2, 33), (3, 35)}
+Unlock() request invoked, Lock Clock: {(1, 34), (2, 33), (3, 35)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 36), (2, 33), (3, 35)}, My Current Clock: {(1, 34), (2, 33), (3, 35)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 36), (2, 37), (3, 35)}, My Current Clock: {(1, 36), (2, 33), (3, 36)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 36), (2, 37), (3, 38)}, Current Clock: {(1, 36), (2, 37), (3, 38)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 36), (2, 37), (3, 38)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 36), (2, 37), (3, 38)}, Current Clock: {(1, 36), (2, 37), (3, 38)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 36), (2, 37), (3, 38)}
+Lock request has been granted, Lock Clock: {(1, 36), (2, 37), (3, 38)}
+Unlock() request invoked, Lock Clock: {(1, 36), (2, 37), (3, 38)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 36), (2, 39), (3, 38)}, My Current Clock: {(1, 36), (2, 37), (3, 38)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 36), (2, 39), (3, 40)}, Current Clock: {(1, 36), (2, 39), (3, 40)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 36), (2, 39), (3, 40)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 36), (2, 39), (3, 40)}, Current Clock: {(1, 36), (2, 39), (3, 40)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 36), (2, 39), (3, 40)}
+Lock request has been granted, Lock Clock: {(1, 36), (2, 39), (3, 40)}
+Unlock() request invoked, Lock Clock: {(1, 36), (2, 39), (3, 40)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 41), (2, 39), (3, 40)}, My Current Clock: {(1, 36), (2, 39), (3, 40)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 41), (2, 42), (3, 40)}, My Current Clock: {(1, 41), (2, 39), (3, 41)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 42), (3, 43)}, Current Clock: {(1, 41), (2, 42), (3, 43)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 41), (2, 42), (3, 43)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 42), (3, 43)}, Current Clock: {(1, 41), (2, 42), (3, 43)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 41), (2, 42), (3, 43)}
+Lock request has been granted, Lock Clock: {(1, 41), (2, 42), (3, 43)}
+Unlock() request invoked, Lock Clock: {(1, 41), (2, 42), (3, 43)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 42), (3, 44)}, Current Clock: {(1, 41), (2, 42), (3, 44)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 41), (2, 42), (3, 44)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 42), (3, 44)}, Current Clock: {(1, 41), (2, 42), (3, 44)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 41), (2, 42), (3, 44)}
+Lock request has been granted, Lock Clock: {(1, 41), (2, 42), (3, 44)}
+Unlock() request invoked, Lock Clock: {(1, 41), (2, 42), (3, 44)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 41), (2, 45), (3, 44)}, My Current Clock: {(1, 41), (2, 42), (3, 44)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 45), (3, 46)}, Current Clock: {(1, 41), (2, 45), (3, 46)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 41), (2, 45), (3, 46)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 41), (2, 45), (3, 46)}, Current Clock: {(1, 41), (2, 45), (3, 46)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 41), (2, 45), (3, 46)}
+Lock request has been granted, Lock Clock: {(1, 41), (2, 45), (3, 46)}
+Unlock() request invoked, Lock Clock: {(1, 41), (2, 45), (3, 46)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 47), (2, 45), (3, 46)}, My Current Clock: {(1, 41), (2, 45), (3, 46)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 47), (2, 45), (3, 48)}, Current Clock: {(1, 47), (2, 45), (3, 48)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 47), (2, 45), (3, 48)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 47), (2, 45), (3, 48)}, Current Clock: {(1, 47), (2, 45), (3, 48)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 47), (2, 45), (3, 48)}
+Lock request has been granted, Lock Clock: {(1, 47), (2, 45), (3, 48)}
+Unlock() request invoked, Lock Clock: {(1, 47), (2, 45), (3, 48)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 49), (2, 45), (3, 48)}, My Current Clock: {(1, 47), (2, 45), (3, 48)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 49), (2, 45), (3, 50)}, Current Clock: {(1, 49), (2, 45), (3, 50)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 49), (2, 45), (3, 50)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 49), (2, 45), (3, 50)}, Current Clock: {(1, 49), (2, 45), (3, 50)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 49), (2, 45), (3, 50)}
+Lock request has been granted, Lock Clock: {(1, 49), (2, 45), (3, 50)}
+Unlock() request invoked, Lock Clock: {(1, 49), (2, 45), (3, 50)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 49), (2, 51), (3, 50)}, My Current Clock: {(1, 49), (2, 45), (3, 50)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 49), (2, 51), (3, 52)}, Current Clock: {(1, 49), (2, 51), (3, 52)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 49), (2, 51), (3, 52)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 49), (2, 51), (3, 52)}, Current Clock: {(1, 49), (2, 51), (3, 52)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 49), (2, 51), (3, 52)}
+Lock request has been granted, Lock Clock: {(1, 49), (2, 51), (3, 52)}
+Unlock() request invoked, Lock Clock: {(1, 49), (2, 51), (3, 52)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 53), (2, 51), (3, 52)}, My Current Clock: {(1, 49), (2, 51), (3, 52)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 53), (2, 54), (3, 52)}, My Current Clock: {(1, 53), (2, 51), (3, 53)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 53), (2, 54), (3, 55)}, Current Clock: {(1, 53), (2, 54), (3, 55)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 53), (2, 54), (3, 55)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 53), (2, 54), (3, 55)}, Current Clock: {(1, 53), (2, 54), (3, 55)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 53), (2, 54), (3, 55)}
+Lock request has been granted, Lock Clock: {(1, 53), (2, 54), (3, 55)}
+Unlock() request invoked, Lock Clock: {(1, 53), (2, 54), (3, 55)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 56), (2, 54), (3, 55)}, My Current Clock: {(1, 53), (2, 54), (3, 55)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 56), (2, 57), (3, 55)}, My Current Clock: {(1, 56), (2, 54), (3, 56)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 58), (2, 57), (3, 55)}, My Current Clock: {(1, 56), (2, 57), (3, 57)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 58), (2, 57), (3, 59)}, Current Clock: {(1, 58), (2, 57), (3, 59)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 58), (2, 57), (3, 59)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 58), (2, 57), (3, 59)}, Current Clock: {(1, 58), (2, 57), (3, 59)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 58), (2, 57), (3, 59)}
+Lock request has been granted, Lock Clock: {(1, 58), (2, 57), (3, 59)}
+Unlock() request invoked, Lock Clock: {(1, 58), (2, 57), (3, 59)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 58), (2, 60), (3, 59)}, My Current Clock: {(1, 58), (2, 57), (3, 59)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 61), (2, 60), (3, 59)}, My Current Clock: {(1, 58), (2, 60), (3, 60)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 61), (2, 60), (3, 62)}, Current Clock: {(1, 61), (2, 60), (3, 62)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 61), (2, 60), (3, 62)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 61), (2, 60), (3, 62)}, Current Clock: {(1, 61), (2, 60), (3, 62)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 61), (2, 60), (3, 62)}
+Lock request has been granted, Lock Clock: {(1, 61), (2, 60), (3, 62)}
+Unlock() request invoked, Lock Clock: {(1, 61), (2, 60), (3, 62)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 63), (2, 60), (3, 62)}, My Current Clock: {(1, 61), (2, 60), (3, 62)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 63), (2, 64), (3, 62)}, My Current Clock: {(1, 63), (2, 60), (3, 63)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 63), (2, 64), (3, 65)}, Current Clock: {(1, 63), (2, 64), (3, 65)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 63), (2, 64), (3, 65)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 63), (2, 64), (3, 65)}, Current Clock: {(1, 63), (2, 64), (3, 65)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 63), (2, 64), (3, 65)}
+Lock request has been granted, Lock Clock: {(1, 63), (2, 64), (3, 65)}
+Unlock() request invoked, Lock Clock: {(1, 63), (2, 64), (3, 65)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 66), (2, 64), (3, 65)}, My Current Clock: {(1, 63), (2, 64), (3, 65)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 66), (2, 67), (3, 65)}, My Current Clock: {(1, 66), (2, 64), (3, 66)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 68), (2, 67), (3, 65)}, My Current Clock: {(1, 66), (2, 67), (3, 67)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 68), (2, 67), (3, 69)}, Current Clock: {(1, 68), (2, 67), (3, 69)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 68), (2, 67), (3, 69)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 68), (2, 67), (3, 69)}, Current Clock: {(1, 68), (2, 67), (3, 69)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 68), (2, 67), (3, 69)}
+Lock request has been granted, Lock Clock: {(1, 68), (2, 67), (3, 69)}
+Unlock() request invoked, Lock Clock: {(1, 68), (2, 67), (3, 69)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 70), (2, 67), (3, 69)}, My Current Clock: {(1, 68), (2, 67), (3, 69)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 70), (2, 71), (3, 69)}, My Current Clock: {(1, 70), (2, 67), (3, 70)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 70), (2, 71), (3, 72)}, Current Clock: {(1, 70), (2, 71), (3, 72)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 70), (2, 71), (3, 72)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 70), (2, 71), (3, 72)}, Current Clock: {(1, 70), (2, 71), (3, 72)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 70), (2, 71), (3, 72)}
+Lock request has been granted, Lock Clock: {(1, 70), (2, 71), (3, 72)}
+Unlock() request invoked, Lock Clock: {(1, 70), (2, 71), (3, 72)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 73), (2, 71), (3, 72)}, My Current Clock: {(1, 70), (2, 71), (3, 72)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 73), (2, 74), (3, 72)}, My Current Clock: {(1, 73), (2, 71), (3, 73)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 73), (2, 74), (3, 75)}, Current Clock: {(1, 73), (2, 74), (3, 75)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 73), (2, 74), (3, 75)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 73), (2, 74), (3, 75)}, Current Clock: {(1, 73), (2, 74), (3, 75)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 73), (2, 74), (3, 75)}
+Lock request has been granted, Lock Clock: {(1, 73), (2, 74), (3, 75)}
+Unlock() request invoked, Lock Clock: {(1, 73), (2, 74), (3, 75)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 76), (2, 74), (3, 75)}, My Current Clock: {(1, 73), (2, 74), (3, 75)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 77), (2, 74), (3, 75)}, My Current Clock: {(1, 76), (2, 74), (3, 76)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 77), (2, 78), (3, 75)}, My Current Clock: {(1, 77), (2, 74), (3, 77)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 77), (2, 79), (3, 75)}, My Current Clock: {(1, 77), (2, 78), (3, 78)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 80), (2, 79), (3, 75)}, My Current Clock: {(1, 77), (2, 79), (3, 79)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 80), (2, 79), (3, 81)}, Current Clock: {(1, 80), (2, 79), (3, 81)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 80), (2, 79), (3, 81)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 80), (2, 79), (3, 81)}, Current Clock: {(1, 80), (2, 79), (3, 81)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 80), (2, 79), (3, 81)}
+Lock request has been granted, Lock Clock: {(1, 80), (2, 79), (3, 81)}
+Unlock() request invoked, Lock Clock: {(1, 80), (2, 79), (3, 81)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 80), (2, 82), (3, 81)}, My Current Clock: {(1, 80), (2, 79), (3, 81)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 83), (2, 82), (3, 81)}, My Current Clock: {(1, 80), (2, 82), (3, 82)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 83), (2, 84), (3, 81)}, My Current Clock: {(1, 83), (2, 82), (3, 83)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 83), (2, 84), (3, 85)}, Current Clock: {(1, 83), (2, 84), (3, 85)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 83), (2, 84), (3, 85)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 83), (2, 84), (3, 85)}, Current Clock: {(1, 83), (2, 84), (3, 85)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 83), (2, 84), (3, 85)}
+Lock request has been granted, Lock Clock: {(1, 83), (2, 84), (3, 85)}
+Unlock() request invoked, Lock Clock: {(1, 83), (2, 84), (3, 85)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 86), (2, 84), (3, 85)}, My Current Clock: {(1, 83), (2, 84), (3, 85)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 87), (2, 84), (3, 85)}, My Current Clock: {(1, 86), (2, 84), (3, 86)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 87), (2, 88), (3, 85)}, My Current Clock: {(1, 87), (2, 84), (3, 87)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 87), (2, 88), (3, 89)}, Current Clock: {(1, 87), (2, 88), (3, 89)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 87), (2, 88), (3, 89)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 87), (2, 88), (3, 89)}, Current Clock: {(1, 87), (2, 88), (3, 89)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 87), (2, 88), (3, 89)}
+Lock request has been granted, Lock Clock: {(1, 87), (2, 88), (3, 89)}
+Unlock() request invoked, Lock Clock: {(1, 87), (2, 88), (3, 89)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 90), (2, 88), (3, 89)}, My Current Clock: {(1, 87), (2, 88), (3, 89)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 90), (2, 88), (3, 91)}, Current Clock: {(1, 90), (2, 88), (3, 91)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 90), (2, 88), (3, 91)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 90), (2, 88), (3, 91)}, Current Clock: {(1, 90), (2, 88), (3, 91)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 90), (2, 88), (3, 91)}
+Lock request has been granted, Lock Clock: {(1, 90), (2, 88), (3, 91)}
+Unlock() request invoked, Lock Clock: {(1, 90), (2, 88), (3, 91)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 90), (2, 92), (3, 91)}, My Current Clock: {(1, 90), (2, 88), (3, 91)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 90), (2, 93), (3, 91)}, My Current Clock: {(1, 90), (2, 92), (3, 92)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 90), (2, 93), (3, 94)}, Current Clock: {(1, 90), (2, 93), (3, 94)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 90), (2, 93), (3, 94)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 90), (2, 93), (3, 94)}, Current Clock: {(1, 90), (2, 93), (3, 94)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 90), (2, 93), (3, 94)}
+Lock request has been granted, Lock Clock: {(1, 90), (2, 93), (3, 94)}
+Unlock() request invoked, Lock Clock: {(1, 90), (2, 93), (3, 94)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 95), (2, 93), (3, 94)}, My Current Clock: {(1, 90), (2, 93), (3, 94)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 95), (2, 93), (3, 96)}, Current Clock: {(1, 95), (2, 93), (3, 96)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 95), (2, 93), (3, 96)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 95), (2, 93), (3, 96)}, Current Clock: {(1, 95), (2, 93), (3, 96)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 95), (2, 93), (3, 96)}
+Lock request has been granted, Lock Clock: {(1, 95), (2, 93), (3, 96)}
+Unlock() request invoked, Lock Clock: {(1, 95), (2, 93), (3, 96)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 95), (2, 97), (3, 96)}, My Current Clock: {(1, 95), (2, 93), (3, 96)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 98), (2, 97), (3, 96)}, My Current Clock: {(1, 95), (2, 97), (3, 97)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 99), (2, 97), (3, 96)}, My Current Clock: {(1, 98), (2, 97), (3, 98)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 99), (2, 97), (3, 100)}, Current Clock: {(1, 99), (2, 97), (3, 100)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 99), (2, 97), (3, 100)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 99), (2, 97), (3, 100)}, Current Clock: {(1, 99), (2, 97), (3, 100)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 99), (2, 97), (3, 100)}
+Lock request has been granted, Lock Clock: {(1, 99), (2, 97), (3, 100)}
+Unlock() request invoked, Lock Clock: {(1, 99), (2, 97), (3, 100)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 101), (2, 97), (3, 100)}, My Current Clock: {(1, 99), (2, 97), (3, 100)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 101), (2, 102), (3, 100)}, My Current Clock: {(1, 101), (2, 97), (3, 101)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 101), (2, 103), (3, 100)}, My Current Clock: {(1, 101), (2, 102), (3, 102)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 104), (2, 103), (3, 100)}, My Current Clock: {(1, 101), (2, 103), (3, 103)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 104), (2, 103), (3, 105)}, Current Clock: {(1, 104), (2, 103), (3, 105)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 104), (2, 103), (3, 105)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 104), (2, 103), (3, 105)}, Current Clock: {(1, 104), (2, 103), (3, 105)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 104), (2, 103), (3, 105)}
+Lock request has been granted, Lock Clock: {(1, 104), (2, 103), (3, 105)}
+Unlock() request invoked, Lock Clock: {(1, 104), (2, 103), (3, 105)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 106), (2, 103), (3, 105)}, My Current Clock: {(1, 104), (2, 103), (3, 105)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 106), (2, 107), (3, 105)}, My Current Clock: {(1, 106), (2, 103), (3, 106)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 106), (2, 107), (3, 108)}, Current Clock: {(1, 106), (2, 107), (3, 108)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 106), (2, 107), (3, 108)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 106), (2, 107), (3, 108)}, Current Clock: {(1, 106), (2, 107), (3, 108)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 106), (2, 107), (3, 108)}
+Lock request has been granted, Lock Clock: {(1, 106), (2, 107), (3, 108)}
+Unlock() request invoked, Lock Clock: {(1, 106), (2, 107), (3, 108)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 109), (2, 107), (3, 108)}, My Current Clock: {(1, 106), (2, 107), (3, 108)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 109), (2, 110), (3, 108)}, My Current Clock: {(1, 109), (2, 107), (3, 109)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 111), (2, 110), (3, 108)}, My Current Clock: {(1, 109), (2, 110), (3, 110)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 111), (2, 110), (3, 112)}, Current Clock: {(1, 111), (2, 110), (3, 112)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 111), (2, 110), (3, 112)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 111), (2, 110), (3, 112)}, Current Clock: {(1, 111), (2, 110), (3, 112)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 111), (2, 110), (3, 112)}
+Lock request has been granted, Lock Clock: {(1, 111), (2, 110), (3, 112)}
+Unlock() request invoked, Lock Clock: {(1, 111), (2, 110), (3, 112)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 111), (2, 113), (3, 112)}, My Current Clock: {(1, 111), (2, 110), (3, 112)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 111), (2, 113), (3, 114)}, Current Clock: {(1, 111), (2, 113), (3, 114)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 111), (2, 113), (3, 114)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 111), (2, 113), (3, 114)}, Current Clock: {(1, 111), (2, 113), (3, 114)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 111), (2, 113), (3, 114)}
+Lock request has been granted, Lock Clock: {(1, 111), (2, 113), (3, 114)}
+Unlock() request invoked, Lock Clock: {(1, 111), (2, 113), (3, 114)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 115), (2, 113), (3, 114)}, My Current Clock: {(1, 111), (2, 113), (3, 114)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 115), (2, 113), (3, 116)}, Current Clock: {(1, 115), (2, 113), (3, 116)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 115), (2, 113), (3, 116)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 115), (2, 113), (3, 116)}, Current Clock: {(1, 115), (2, 113), (3, 116)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 115), (2, 113), (3, 116)}
+Lock request has been granted, Lock Clock: {(1, 115), (2, 113), (3, 116)}
+Unlock() request invoked, Lock Clock: {(1, 115), (2, 113), (3, 116)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 115), (2, 117), (3, 116)}, My Current Clock: {(1, 115), (2, 113), (3, 116)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 115), (2, 118), (3, 116)}, My Current Clock: {(1, 115), (2, 117), (3, 117)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 119), (2, 118), (3, 116)}, My Current Clock: {(1, 115), (2, 118), (3, 118)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 119), (2, 118), (3, 120)}, Current Clock: {(1, 119), (2, 118), (3, 120)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 119), (2, 118), (3, 120)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 119), (2, 118), (3, 120)}, Current Clock: {(1, 119), (2, 118), (3, 120)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 119), (2, 118), (3, 120)}
+Lock request has been granted, Lock Clock: {(1, 119), (2, 118), (3, 120)}
+Unlock() request invoked, Lock Clock: {(1, 119), (2, 118), (3, 120)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 119), (2, 121), (3, 120)}, My Current Clock: {(1, 119), (2, 118), (3, 120)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 122), (2, 121), (3, 120)}, My Current Clock: {(1, 119), (2, 121), (3, 121)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 122), (2, 123), (3, 120)}, My Current Clock: {(1, 122), (2, 121), (3, 122)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 122), (2, 123), (3, 124)}, Current Clock: {(1, 122), (2, 123), (3, 124)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 122), (2, 123), (3, 124)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 122), (2, 123), (3, 124)}, Current Clock: {(1, 122), (2, 123), (3, 124)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 122), (2, 123), (3, 124)}
+Lock request has been granted, Lock Clock: {(1, 122), (2, 123), (3, 124)}
+Unlock() request invoked, Lock Clock: {(1, 122), (2, 123), (3, 124)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 125), (2, 123), (3, 124)}, My Current Clock: {(1, 122), (2, 123), (3, 124)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 125), (2, 123), (3, 126)}, Current Clock: {(1, 125), (2, 123), (3, 126)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 125), (2, 123), (3, 126)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 125), (2, 123), (3, 126)}, Current Clock: {(1, 125), (2, 123), (3, 126)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 125), (2, 123), (3, 126)}
+Lock request has been granted, Lock Clock: {(1, 125), (2, 123), (3, 126)}
+Unlock() request invoked, Lock Clock: {(1, 125), (2, 123), (3, 126)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 125), (2, 127), (3, 126)}, My Current Clock: {(1, 125), (2, 123), (3, 126)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 125), (2, 128), (3, 126)}, My Current Clock: {(1, 125), (2, 127), (3, 127)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 125), (2, 128), (3, 129)}, Current Clock: {(1, 125), (2, 128), (3, 129)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 125), (2, 128), (3, 129)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 125), (2, 128), (3, 129)}, Current Clock: {(1, 125), (2, 128), (3, 129)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 125), (2, 128), (3, 129)}
+Lock request has been granted, Lock Clock: {(1, 125), (2, 128), (3, 129)}
+Unlock() request invoked, Lock Clock: {(1, 125), (2, 128), (3, 129)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 130), (2, 128), (3, 129)}, My Current Clock: {(1, 125), (2, 128), (3, 129)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 130), (2, 128), (3, 131)}, Current Clock: {(1, 130), (2, 128), (3, 131)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 130), (2, 128), (3, 131)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 130), (2, 128), (3, 131)}, Current Clock: {(1, 130), (2, 128), (3, 131)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 130), (2, 128), (3, 131)}
+Lock request has been granted, Lock Clock: {(1, 130), (2, 128), (3, 131)}
+Unlock() request invoked, Lock Clock: {(1, 130), (2, 128), (3, 131)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 130), (2, 128), (3, 132)}, Current Clock: {(1, 130), (2, 128), (3, 132)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 130), (2, 128), (3, 132)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 130), (2, 128), (3, 132)}, Current Clock: {(1, 130), (2, 128), (3, 132)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 130), (2, 128), (3, 132)}
+Lock request has been granted, Lock Clock: {(1, 130), (2, 128), (3, 132)}
+Unlock() request invoked, Lock Clock: {(1, 130), (2, 128), (3, 132)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 130), (2, 133), (3, 132)}, My Current Clock: {(1, 130), (2, 128), (3, 132)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 134), (2, 133), (3, 132)}, My Current Clock: {(1, 130), (2, 133), (3, 133)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 134), (2, 133), (3, 135)}, Current Clock: {(1, 134), (2, 133), (3, 135)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 134), (2, 133), (3, 135)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 134), (2, 133), (3, 135)}, Current Clock: {(1, 134), (2, 133), (3, 135)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 134), (2, 133), (3, 135)}
+Lock request has been granted, Lock Clock: {(1, 134), (2, 133), (3, 135)}
+Unlock() request invoked, Lock Clock: {(1, 134), (2, 133), (3, 135)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 136), (2, 133), (3, 135)}, My Current Clock: {(1, 134), (2, 133), (3, 135)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 136), (2, 137), (3, 135)}, My Current Clock: {(1, 136), (2, 133), (3, 136)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 138), (2, 137), (3, 135)}, My Current Clock: {(1, 136), (2, 137), (3, 137)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 138), (2, 139), (3, 135)}, My Current Clock: {(1, 138), (2, 137), (3, 138)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 138), (2, 139), (3, 140)}, Current Clock: {(1, 138), (2, 139), (3, 140)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 138), (2, 139), (3, 140)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 138), (2, 139), (3, 140)}, Current Clock: {(1, 138), (2, 139), (3, 140)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 138), (2, 139), (3, 140)}
+Lock request has been granted, Lock Clock: {(1, 138), (2, 139), (3, 140)}
+Unlock() request invoked, Lock Clock: {(1, 138), (2, 139), (3, 140)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 138), (2, 139), (3, 141)}, Current Clock: {(1, 138), (2, 139), (3, 141)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 138), (2, 139), (3, 141)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 138), (2, 139), (3, 141)}, Current Clock: {(1, 138), (2, 139), (3, 141)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 138), (2, 139), (3, 141)}
+Lock request has been granted, Lock Clock: {(1, 138), (2, 139), (3, 141)}
+Unlock() request invoked, Lock Clock: {(1, 138), (2, 139), (3, 141)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 142), (2, 139), (3, 141)}, My Current Clock: {(1, 138), (2, 139), (3, 141)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 142), (2, 143), (3, 141)}, My Current Clock: {(1, 142), (2, 139), (3, 142)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 142), (2, 144), (3, 141)}, My Current Clock: {(1, 142), (2, 143), (3, 143)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 142), (2, 144), (3, 145)}, Current Clock: {(1, 142), (2, 144), (3, 145)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 142), (2, 144), (3, 145)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 142), (2, 144), (3, 145)}, Current Clock: {(1, 142), (2, 144), (3, 145)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 142), (2, 144), (3, 145)}
+Lock request has been granted, Lock Clock: {(1, 142), (2, 144), (3, 145)}
+Unlock() request invoked, Lock Clock: {(1, 142), (2, 144), (3, 145)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 142), (2, 144), (3, 146)}, Current Clock: {(1, 142), (2, 144), (3, 146)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 142), (2, 144), (3, 146)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 142), (2, 144), (3, 146)}, Current Clock: {(1, 142), (2, 144), (3, 146)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 142), (2, 144), (3, 146)}
+Lock request has been granted, Lock Clock: {(1, 142), (2, 144), (3, 146)}
+Unlock() request invoked, Lock Clock: {(1, 142), (2, 144), (3, 146)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 147), (2, 144), (3, 146)}, My Current Clock: {(1, 142), (2, 144), (3, 146)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 147), (2, 148), (3, 146)}, My Current Clock: {(1, 147), (2, 144), (3, 147)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 149), (2, 148), (3, 146)}, My Current Clock: {(1, 147), (2, 148), (3, 148)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 150), (2, 148), (3, 146)}, My Current Clock: {(1, 149), (2, 148), (3, 149)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 150), (2, 148), (3, 151)}, Current Clock: {(1, 150), (2, 148), (3, 151)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 150), (2, 148), (3, 151)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 150), (2, 148), (3, 151)}, Current Clock: {(1, 150), (2, 148), (3, 151)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 150), (2, 148), (3, 151)}
+Lock request has been granted, Lock Clock: {(1, 150), (2, 148), (3, 151)}
+Unlock() request invoked, Lock Clock: {(1, 150), (2, 148), (3, 151)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 150), (2, 152), (3, 151)}, My Current Clock: {(1, 150), (2, 148), (3, 151)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 153), (2, 152), (3, 151)}, My Current Clock: {(1, 150), (2, 152), (3, 152)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 153), (2, 152), (3, 154)}, Current Clock: {(1, 153), (2, 152), (3, 154)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 153), (2, 152), (3, 154)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 153), (2, 152), (3, 154)}, Current Clock: {(1, 153), (2, 152), (3, 154)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 153), (2, 152), (3, 154)}
+Lock request has been granted, Lock Clock: {(1, 153), (2, 152), (3, 154)}
+Unlock() request invoked, Lock Clock: {(1, 153), (2, 152), (3, 154)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 153), (2, 155), (3, 154)}, My Current Clock: {(1, 153), (2, 152), (3, 154)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 156), (2, 155), (3, 154)}, My Current Clock: {(1, 153), (2, 155), (3, 155)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 156), (2, 157), (3, 154)}, My Current Clock: {(1, 156), (2, 155), (3, 156)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 156), (2, 157), (3, 158)}, Current Clock: {(1, 156), (2, 157), (3, 158)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 156), (2, 157), (3, 158)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 156), (2, 157), (3, 158)}, Current Clock: {(1, 156), (2, 157), (3, 158)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 156), (2, 157), (3, 158)}
+Lock request has been granted, Lock Clock: {(1, 156), (2, 157), (3, 158)}
+Unlock() request invoked, Lock Clock: {(1, 156), (2, 157), (3, 158)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 156), (2, 159), (3, 158)}, My Current Clock: {(1, 156), (2, 157), (3, 158)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 156), (2, 160), (3, 158)}, My Current Clock: {(1, 156), (2, 159), (3, 159)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 156), (2, 160), (3, 161)}, Current Clock: {(1, 156), (2, 160), (3, 161)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 156), (2, 160), (3, 161)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 156), (2, 160), (3, 161)}, Current Clock: {(1, 156), (2, 160), (3, 161)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 156), (2, 160), (3, 161)}
+Lock request has been granted, Lock Clock: {(1, 156), (2, 160), (3, 161)}
+Unlock() request invoked, Lock Clock: {(1, 156), (2, 160), (3, 161)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 162), (2, 160), (3, 161)}, My Current Clock: {(1, 156), (2, 160), (3, 161)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 162), (2, 163), (3, 161)}, My Current Clock: {(1, 162), (2, 160), (3, 162)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 164), (2, 163), (3, 161)}, My Current Clock: {(1, 162), (2, 163), (3, 163)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 164), (2, 165), (3, 161)}, My Current Clock: {(1, 164), (2, 163), (3, 164)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 164), (2, 165), (3, 166)}, Current Clock: {(1, 164), (2, 165), (3, 166)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 164), (2, 165), (3, 166)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 164), (2, 165), (3, 166)}, Current Clock: {(1, 164), (2, 165), (3, 166)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 164), (2, 165), (3, 166)}
+Lock request has been granted, Lock Clock: {(1, 164), (2, 165), (3, 166)}
+Unlock() request invoked, Lock Clock: {(1, 164), (2, 165), (3, 166)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 164), (2, 167), (3, 166)}, My Current Clock: {(1, 164), (2, 165), (3, 166)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 168), (2, 167), (3, 166)}, My Current Clock: {(1, 164), (2, 167), (3, 167)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 168), (2, 167), (3, 169)}, Current Clock: {(1, 168), (2, 167), (3, 169)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 168), (2, 167), (3, 169)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 168), (2, 167), (3, 169)}, Current Clock: {(1, 168), (2, 167), (3, 169)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 168), (2, 167), (3, 169)}
+Lock request has been granted, Lock Clock: {(1, 168), (2, 167), (3, 169)}
+Unlock() request invoked, Lock Clock: {(1, 168), (2, 167), (3, 169)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 170), (2, 167), (3, 169)}, My Current Clock: {(1, 168), (2, 167), (3, 169)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 170), (2, 171), (3, 169)}, My Current Clock: {(1, 170), (2, 167), (3, 170)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 170), (2, 171), (3, 172)}, Current Clock: {(1, 170), (2, 171), (3, 172)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 170), (2, 171), (3, 172)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 170), (2, 171), (3, 172)}, Current Clock: {(1, 170), (2, 171), (3, 172)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 170), (2, 171), (3, 172)}
+Lock request has been granted, Lock Clock: {(1, 170), (2, 171), (3, 172)}
+Unlock() request invoked, Lock Clock: {(1, 170), (2, 171), (3, 172)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 170), (2, 173), (3, 172)}, My Current Clock: {(1, 170), (2, 171), (3, 172)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 174), (2, 173), (3, 172)}, My Current Clock: {(1, 170), (2, 173), (3, 173)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 174), (2, 175), (3, 172)}, My Current Clock: {(1, 174), (2, 173), (3, 174)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 174), (2, 175), (3, 176)}, Current Clock: {(1, 174), (2, 175), (3, 176)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 174), (2, 175), (3, 176)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 174), (2, 175), (3, 176)}, Current Clock: {(1, 174), (2, 175), (3, 176)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 174), (2, 175), (3, 176)}
+Lock request has been granted, Lock Clock: {(1, 174), (2, 175), (3, 176)}
+Unlock() request invoked, Lock Clock: {(1, 174), (2, 175), (3, 176)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 177), (2, 175), (3, 176)}, My Current Clock: {(1, 174), (2, 175), (3, 176)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 177), (2, 178), (3, 176)}, My Current Clock: {(1, 177), (2, 175), (3, 177)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 179), (2, 178), (3, 176)}, My Current Clock: {(1, 177), (2, 178), (3, 178)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 179), (2, 180), (3, 176)}, My Current Clock: {(1, 179), (2, 178), (3, 179)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 179), (2, 180), (3, 181)}, Current Clock: {(1, 179), (2, 180), (3, 181)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 179), (2, 180), (3, 181)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 179), (2, 180), (3, 181)}, Current Clock: {(1, 179), (2, 180), (3, 181)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 179), (2, 180), (3, 181)}
+Lock request has been granted, Lock Clock: {(1, 179), (2, 180), (3, 181)}
+Unlock() request invoked, Lock Clock: {(1, 179), (2, 180), (3, 181)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 182), (2, 180), (3, 181)}, My Current Clock: {(1, 179), (2, 180), (3, 181)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 182), (2, 183), (3, 181)}, My Current Clock: {(1, 182), (2, 180), (3, 182)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 182), (2, 183), (3, 184)}, Current Clock: {(1, 182), (2, 183), (3, 184)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 182), (2, 183), (3, 184)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 182), (2, 183), (3, 184)}, Current Clock: {(1, 182), (2, 183), (3, 184)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 182), (2, 183), (3, 184)}
+Lock request has been granted, Lock Clock: {(1, 182), (2, 183), (3, 184)}
+Unlock() request invoked, Lock Clock: {(1, 182), (2, 183), (3, 184)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 182), (2, 185), (3, 184)}, My Current Clock: {(1, 182), (2, 183), (3, 184)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 186), (2, 185), (3, 184)}, My Current Clock: {(1, 182), (2, 185), (3, 185)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 186), (2, 185), (3, 187)}, Current Clock: {(1, 186), (2, 185), (3, 187)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 186), (2, 185), (3, 187)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 186), (2, 185), (3, 187)}, Current Clock: {(1, 186), (2, 185), (3, 187)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 186), (2, 185), (3, 187)}
+Lock request has been granted, Lock Clock: {(1, 186), (2, 185), (3, 187)}
+Unlock() request invoked, Lock Clock: {(1, 186), (2, 185), (3, 187)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 186), (2, 188), (3, 187)}, My Current Clock: {(1, 186), (2, 185), (3, 187)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 186), (2, 189), (3, 187)}, My Current Clock: {(1, 186), (2, 188), (3, 188)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 190), (2, 189), (3, 187)}, My Current Clock: {(1, 186), (2, 189), (3, 189)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 190), (2, 189), (3, 191)}, Current Clock: {(1, 190), (2, 189), (3, 191)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 190), (2, 189), (3, 191)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 190), (2, 189), (3, 191)}, Current Clock: {(1, 190), (2, 189), (3, 191)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 190), (2, 189), (3, 191)}
+Lock request has been granted, Lock Clock: {(1, 190), (2, 189), (3, 191)}
+Unlock() request invoked, Lock Clock: {(1, 190), (2, 189), (3, 191)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 190), (2, 192), (3, 191)}, My Current Clock: {(1, 190), (2, 189), (3, 191)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 193), (2, 192), (3, 191)}, My Current Clock: {(1, 190), (2, 192), (3, 192)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 194), (2, 192), (3, 191)}, My Current Clock: {(1, 193), (2, 192), (3, 193)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 195), (2, 192), (3, 191)}, My Current Clock: {(1, 194), (2, 192), (3, 194)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 195), (2, 192), (3, 196)}, Current Clock: {(1, 195), (2, 192), (3, 196)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 195), (2, 192), (3, 196)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 195), (2, 192), (3, 196)}, Current Clock: {(1, 195), (2, 192), (3, 196)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 195), (2, 192), (3, 196)}
+Lock request has been granted, Lock Clock: {(1, 195), (2, 192), (3, 196)}
+Unlock() request invoked, Lock Clock: {(1, 195), (2, 192), (3, 196)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 195), (2, 197), (3, 196)}, My Current Clock: {(1, 195), (2, 192), (3, 196)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 198), (2, 197), (3, 196)}, My Current Clock: {(1, 195), (2, 197), (3, 197)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 199), (2, 197), (3, 196)}, My Current Clock: {(1, 198), (2, 197), (3, 198)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 199), (2, 200), (3, 196)}, My Current Clock: {(1, 199), (2, 197), (3, 199)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 199), (2, 200), (3, 201)}, Current Clock: {(1, 199), (2, 200), (3, 201)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 199), (2, 200), (3, 201)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 199), (2, 200), (3, 201)}, Current Clock: {(1, 199), (2, 200), (3, 201)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 199), (2, 200), (3, 201)}
+Lock request has been granted, Lock Clock: {(1, 199), (2, 200), (3, 201)}
+Unlock() request invoked, Lock Clock: {(1, 199), (2, 200), (3, 201)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 199), (2, 202), (3, 201)}, My Current Clock: {(1, 199), (2, 200), (3, 201)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 203), (2, 202), (3, 201)}, My Current Clock: {(1, 199), (2, 202), (3, 202)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 203), (2, 204), (3, 201)}, My Current Clock: {(1, 203), (2, 202), (3, 203)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 203), (2, 204), (3, 205)}, Current Clock: {(1, 203), (2, 204), (3, 205)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 203), (2, 204), (3, 205)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 203), (2, 204), (3, 205)}, Current Clock: {(1, 203), (2, 204), (3, 205)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 203), (2, 204), (3, 205)}
+Lock request has been granted, Lock Clock: {(1, 203), (2, 204), (3, 205)}
+Unlock() request invoked, Lock Clock: {(1, 203), (2, 204), (3, 205)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 203), (2, 204), (3, 206)}, Current Clock: {(1, 203), (2, 204), (3, 206)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 203), (2, 204), (3, 206)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 203), (2, 204), (3, 206)}, Current Clock: {(1, 203), (2, 204), (3, 206)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 203), (2, 204), (3, 206)}
+Lock request has been granted, Lock Clock: {(1, 203), (2, 204), (3, 206)}
+Unlock() request invoked, Lock Clock: {(1, 203), (2, 204), (3, 206)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 207), (2, 204), (3, 206)}, My Current Clock: {(1, 203), (2, 204), (3, 206)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 207), (2, 208), (3, 206)}, My Current Clock: {(1, 207), (2, 204), (3, 207)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 207), (2, 208), (3, 209)}, Current Clock: {(1, 207), (2, 208), (3, 209)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 207), (2, 208), (3, 209)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 207), (2, 208), (3, 209)}, Current Clock: {(1, 207), (2, 208), (3, 209)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 207), (2, 208), (3, 209)}
+Lock request has been granted, Lock Clock: {(1, 207), (2, 208), (3, 209)}
+Unlock() request invoked, Lock Clock: {(1, 207), (2, 208), (3, 209)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 210), (2, 208), (3, 209)}, My Current Clock: {(1, 207), (2, 208), (3, 209)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 211), (2, 208), (3, 209)}, My Current Clock: {(1, 210), (2, 208), (3, 210)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 211), (2, 212), (3, 209)}, My Current Clock: {(1, 211), (2, 208), (3, 211)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 211), (2, 212), (3, 213)}, Current Clock: {(1, 211), (2, 212), (3, 213)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 211), (2, 212), (3, 213)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 211), (2, 212), (3, 213)}, Current Clock: {(1, 211), (2, 212), (3, 213)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 211), (2, 212), (3, 213)}
+Lock request has been granted, Lock Clock: {(1, 211), (2, 212), (3, 213)}
+Unlock() request invoked, Lock Clock: {(1, 211), (2, 212), (3, 213)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 211), (2, 212), (3, 214)}, Current Clock: {(1, 211), (2, 212), (3, 214)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 211), (2, 212), (3, 214)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 211), (2, 212), (3, 214)}, Current Clock: {(1, 211), (2, 212), (3, 214)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 211), (2, 212), (3, 214)}
+Lock request has been granted, Lock Clock: {(1, 211), (2, 212), (3, 214)}
+Unlock() request invoked, Lock Clock: {(1, 211), (2, 212), (3, 214)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 211), (2, 215), (3, 214)}, My Current Clock: {(1, 211), (2, 212), (3, 214)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 216), (2, 215), (3, 214)}, My Current Clock: {(1, 211), (2, 215), (3, 215)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 216), (2, 217), (3, 214)}, My Current Clock: {(1, 216), (2, 215), (3, 216)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 218), (2, 217), (3, 214)}, My Current Clock: {(1, 216), (2, 217), (3, 217)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 218), (2, 217), (3, 219)}, Current Clock: {(1, 218), (2, 217), (3, 219)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 218), (2, 217), (3, 219)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 218), (2, 217), (3, 219)}, Current Clock: {(1, 218), (2, 217), (3, 219)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 218), (2, 217), (3, 219)}
+Lock request has been granted, Lock Clock: {(1, 218), (2, 217), (3, 219)}
+Unlock() request invoked, Lock Clock: {(1, 218), (2, 217), (3, 219)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 218), (2, 220), (3, 219)}, My Current Clock: {(1, 218), (2, 217), (3, 219)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 218), (2, 221), (3, 219)}, My Current Clock: {(1, 218), (2, 220), (3, 220)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 218), (2, 221), (3, 222)}, Current Clock: {(1, 218), (2, 221), (3, 222)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 218), (2, 221), (3, 222)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 218), (2, 221), (3, 222)}, Current Clock: {(1, 218), (2, 221), (3, 222)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 218), (2, 221), (3, 222)}
+Lock request has been granted, Lock Clock: {(1, 218), (2, 221), (3, 222)}
+Unlock() request invoked, Lock Clock: {(1, 218), (2, 221), (3, 222)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 223), (2, 221), (3, 222)}, My Current Clock: {(1, 218), (2, 221), (3, 222)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 224), (2, 221), (3, 222)}, My Current Clock: {(1, 223), (2, 221), (3, 223)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 224), (2, 221), (3, 225)}, Current Clock: {(1, 224), (2, 221), (3, 225)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 224), (2, 221), (3, 225)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 224), (2, 221), (3, 225)}, Current Clock: {(1, 224), (2, 221), (3, 225)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 224), (2, 221), (3, 225)}
+Lock request has been granted, Lock Clock: {(1, 224), (2, 221), (3, 225)}
+Unlock() request invoked, Lock Clock: {(1, 224), (2, 221), (3, 225)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 224), (2, 226), (3, 225)}, My Current Clock: {(1, 224), (2, 221), (3, 225)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 227), (2, 226), (3, 225)}, My Current Clock: {(1, 224), (2, 226), (3, 226)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 227), (2, 226), (3, 228)}, Current Clock: {(1, 227), (2, 226), (3, 228)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 227), (2, 226), (3, 228)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 227), (2, 226), (3, 228)}, Current Clock: {(1, 227), (2, 226), (3, 228)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 227), (2, 226), (3, 228)}
+Lock request has been granted, Lock Clock: {(1, 227), (2, 226), (3, 228)}
+Unlock() request invoked, Lock Clock: {(1, 227), (2, 226), (3, 228)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 229), (2, 226), (3, 228)}, My Current Clock: {(1, 227), (2, 226), (3, 228)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 226), (3, 230)}, Current Clock: {(1, 229), (2, 226), (3, 230)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 229), (2, 226), (3, 230)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 226), (3, 230)}, Current Clock: {(1, 229), (2, 226), (3, 230)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 229), (2, 226), (3, 230)}
+Lock request has been granted, Lock Clock: {(1, 229), (2, 226), (3, 230)}
+Unlock() request invoked, Lock Clock: {(1, 229), (2, 226), (3, 230)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 229), (2, 231), (3, 230)}, My Current Clock: {(1, 229), (2, 226), (3, 230)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 231), (3, 232)}, Current Clock: {(1, 229), (2, 231), (3, 232)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 229), (2, 231), (3, 232)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 231), (3, 232)}, Current Clock: {(1, 229), (2, 231), (3, 232)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 229), (2, 231), (3, 232)}
+Lock request has been granted, Lock Clock: {(1, 229), (2, 231), (3, 232)}
+Unlock() request invoked, Lock Clock: {(1, 229), (2, 231), (3, 232)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 229), (2, 233), (3, 232)}, My Current Clock: {(1, 229), (2, 231), (3, 232)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 233), (3, 234)}, Current Clock: {(1, 229), (2, 233), (3, 234)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 229), (2, 233), (3, 234)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 229), (2, 233), (3, 234)}, Current Clock: {(1, 229), (2, 233), (3, 234)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 229), (2, 233), (3, 234)}
+Lock request has been granted, Lock Clock: {(1, 229), (2, 233), (3, 234)}
+Unlock() request invoked, Lock Clock: {(1, 229), (2, 233), (3, 234)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 235), (2, 233), (3, 234)}, My Current Clock: {(1, 229), (2, 233), (3, 234)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 235), (2, 233), (3, 236)}, Current Clock: {(1, 235), (2, 233), (3, 236)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 235), (2, 233), (3, 236)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 235), (2, 233), (3, 236)}, Current Clock: {(1, 235), (2, 233), (3, 236)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 235), (2, 233), (3, 236)}
+Lock request has been granted, Lock Clock: {(1, 235), (2, 233), (3, 236)}
+Unlock() request invoked, Lock Clock: {(1, 235), (2, 233), (3, 236)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 235), (2, 237), (3, 236)}, My Current Clock: {(1, 235), (2, 233), (3, 236)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 235), (2, 238), (3, 236)}, My Current Clock: {(1, 235), (2, 237), (3, 237)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 235), (2, 238), (3, 239)}, Current Clock: {(1, 235), (2, 238), (3, 239)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 235), (2, 238), (3, 239)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 235), (2, 238), (3, 239)}, Current Clock: {(1, 235), (2, 238), (3, 239)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 235), (2, 238), (3, 239)}
+Lock request has been granted, Lock Clock: {(1, 235), (2, 238), (3, 239)}
+Unlock() request invoked, Lock Clock: {(1, 235), (2, 238), (3, 239)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 240), (2, 238), (3, 239)}, My Current Clock: {(1, 235), (2, 238), (3, 239)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 240), (2, 238), (3, 241)}, Current Clock: {(1, 240), (2, 238), (3, 241)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 240), (2, 238), (3, 241)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 240), (2, 238), (3, 241)}, Current Clock: {(1, 240), (2, 238), (3, 241)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 240), (2, 238), (3, 241)}
+Lock request has been granted, Lock Clock: {(1, 240), (2, 238), (3, 241)}
+Unlock() request invoked, Lock Clock: {(1, 240), (2, 238), (3, 241)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 242), (2, 238), (3, 241)}, My Current Clock: {(1, 240), (2, 238), (3, 241)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 243), (2, 238), (3, 241)}, My Current Clock: {(1, 242), (2, 238), (3, 242)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 243), (2, 244), (3, 241)}, My Current Clock: {(1, 243), (2, 238), (3, 243)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 243), (2, 245), (3, 241)}, My Current Clock: {(1, 243), (2, 244), (3, 244)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 243), (2, 246), (3, 241)}, My Current Clock: {(1, 243), (2, 245), (3, 245)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 243), (2, 246), (3, 247)}, Current Clock: {(1, 243), (2, 246), (3, 247)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 243), (2, 246), (3, 247)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 243), (2, 246), (3, 247)}, Current Clock: {(1, 243), (2, 246), (3, 247)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 243), (2, 246), (3, 247)}
+Lock request has been granted, Lock Clock: {(1, 243), (2, 246), (3, 247)}
+Unlock() request invoked, Lock Clock: {(1, 243), (2, 246), (3, 247)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 248), (2, 246), (3, 247)}, My Current Clock: {(1, 243), (2, 246), (3, 247)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 248), (2, 249), (3, 247)}, My Current Clock: {(1, 248), (2, 246), (3, 248)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 250), (2, 249), (3, 247)}, My Current Clock: {(1, 248), (2, 249), (3, 249)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 250), (2, 251), (3, 247)}, My Current Clock: {(1, 250), (2, 249), (3, 250)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 250), (2, 251), (3, 252)}, Current Clock: {(1, 250), (2, 251), (3, 252)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 250), (2, 251), (3, 252)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 250), (2, 251), (3, 252)}, Current Clock: {(1, 250), (2, 251), (3, 252)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 250), (2, 251), (3, 252)}
+Lock request has been granted, Lock Clock: {(1, 250), (2, 251), (3, 252)}
+Unlock() request invoked, Lock Clock: {(1, 250), (2, 251), (3, 252)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 250), (2, 253), (3, 252)}, My Current Clock: {(1, 250), (2, 251), (3, 252)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 254), (2, 253), (3, 252)}, My Current Clock: {(1, 250), (2, 253), (3, 253)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 254), (2, 253), (3, 255)}, Current Clock: {(1, 254), (2, 253), (3, 255)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 254), (2, 253), (3, 255)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 254), (2, 253), (3, 255)}, Current Clock: {(1, 254), (2, 253), (3, 255)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 254), (2, 253), (3, 255)}
+Lock request has been granted, Lock Clock: {(1, 254), (2, 253), (3, 255)}
+Unlock() request invoked, Lock Clock: {(1, 254), (2, 253), (3, 255)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 254), (2, 253), (3, 256)}, Current Clock: {(1, 254), (2, 253), (3, 256)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 254), (2, 253), (3, 256)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 254), (2, 253), (3, 256)}, Current Clock: {(1, 254), (2, 253), (3, 256)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 254), (2, 253), (3, 256)}
+Lock request has been granted, Lock Clock: {(1, 254), (2, 253), (3, 256)}
+Unlock() request invoked, Lock Clock: {(1, 254), (2, 253), (3, 256)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 254), (2, 257), (3, 256)}, My Current Clock: {(1, 254), (2, 253), (3, 256)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 258), (2, 257), (3, 256)}, My Current Clock: {(1, 254), (2, 257), (3, 257)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 258), (2, 257), (3, 259)}, Current Clock: {(1, 258), (2, 257), (3, 259)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 258), (2, 257), (3, 259)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 258), (2, 257), (3, 259)}, Current Clock: {(1, 258), (2, 257), (3, 259)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 258), (2, 257), (3, 259)}
+Lock request has been granted, Lock Clock: {(1, 258), (2, 257), (3, 259)}
+Unlock() request invoked, Lock Clock: {(1, 258), (2, 257), (3, 259)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 258), (2, 260), (3, 259)}, My Current Clock: {(1, 258), (2, 257), (3, 259)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 261), (2, 260), (3, 259)}, My Current Clock: {(1, 258), (2, 260), (3, 260)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 260), (3, 262)}, Current Clock: {(1, 261), (2, 260), (3, 262)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 261), (2, 260), (3, 262)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 260), (3, 262)}, Current Clock: {(1, 261), (2, 260), (3, 262)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 261), (2, 260), (3, 262)}
+Lock request has been granted, Lock Clock: {(1, 261), (2, 260), (3, 262)}
+Unlock() request invoked, Lock Clock: {(1, 261), (2, 260), (3, 262)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 260), (3, 263)}, Current Clock: {(1, 261), (2, 260), (3, 263)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 261), (2, 260), (3, 263)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 260), (3, 263)}, Current Clock: {(1, 261), (2, 260), (3, 263)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 261), (2, 260), (3, 263)}
+Lock request has been granted, Lock Clock: {(1, 261), (2, 260), (3, 263)}
+Unlock() request invoked, Lock Clock: {(1, 261), (2, 260), (3, 263)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 261), (2, 264), (3, 263)}, My Current Clock: {(1, 261), (2, 260), (3, 263)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 264), (3, 265)}, Current Clock: {(1, 261), (2, 264), (3, 265)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 261), (2, 264), (3, 265)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 261), (2, 264), (3, 265)}, Current Clock: {(1, 261), (2, 264), (3, 265)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 261), (2, 264), (3, 265)}
+Lock request has been granted, Lock Clock: {(1, 261), (2, 264), (3, 265)}
+Unlock() request invoked, Lock Clock: {(1, 261), (2, 264), (3, 265)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 261), (2, 266), (3, 265)}, My Current Clock: {(1, 261), (2, 264), (3, 265)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 267), (2, 266), (3, 265)}, My Current Clock: {(1, 261), (2, 266), (3, 266)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 267), (2, 266), (3, 268)}, Current Clock: {(1, 267), (2, 266), (3, 268)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 267), (2, 266), (3, 268)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 267), (2, 266), (3, 268)}, Current Clock: {(1, 267), (2, 266), (3, 268)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 267), (2, 266), (3, 268)}
+Lock request has been granted, Lock Clock: {(1, 267), (2, 266), (3, 268)}
+Unlock() request invoked, Lock Clock: {(1, 267), (2, 266), (3, 268)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 269), (2, 266), (3, 268)}, My Current Clock: {(1, 267), (2, 266), (3, 268)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 269), (2, 270), (3, 268)}, My Current Clock: {(1, 269), (2, 266), (3, 269)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 269), (2, 270), (3, 271)}, Current Clock: {(1, 269), (2, 270), (3, 271)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 269), (2, 270), (3, 271)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 269), (2, 270), (3, 271)}, Current Clock: {(1, 269), (2, 270), (3, 271)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 269), (2, 270), (3, 271)}
+Lock request has been granted, Lock Clock: {(1, 269), (2, 270), (3, 271)}
+Unlock() request invoked, Lock Clock: {(1, 269), (2, 270), (3, 271)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 269), (2, 272), (3, 271)}, My Current Clock: {(1, 269), (2, 270), (3, 271)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 269), (2, 272), (3, 273)}, Current Clock: {(1, 269), (2, 272), (3, 273)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 269), (2, 272), (3, 273)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 269), (2, 272), (3, 273)}, Current Clock: {(1, 269), (2, 272), (3, 273)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 269), (2, 272), (3, 273)}
+Lock request has been granted, Lock Clock: {(1, 269), (2, 272), (3, 273)}
+Unlock() request invoked, Lock Clock: {(1, 269), (2, 272), (3, 273)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 274), (2, 272), (3, 273)}, My Current Clock: {(1, 269), (2, 272), (3, 273)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 274), (2, 272), (3, 275)}, Current Clock: {(1, 274), (2, 272), (3, 275)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 274), (2, 272), (3, 275)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 274), (2, 272), (3, 275)}, Current Clock: {(1, 274), (2, 272), (3, 275)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 274), (2, 272), (3, 275)}
+Lock request has been granted, Lock Clock: {(1, 274), (2, 272), (3, 275)}
+Unlock() request invoked, Lock Clock: {(1, 274), (2, 272), (3, 275)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 274), (2, 276), (3, 275)}, My Current Clock: {(1, 274), (2, 272), (3, 275)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 277), (2, 276), (3, 275)}, My Current Clock: {(1, 274), (2, 276), (3, 276)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 277), (2, 276), (3, 278)}, Current Clock: {(1, 277), (2, 276), (3, 278)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 277), (2, 276), (3, 278)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 277), (2, 276), (3, 278)}, Current Clock: {(1, 277), (2, 276), (3, 278)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 277), (2, 276), (3, 278)}
+Lock request has been granted, Lock Clock: {(1, 277), (2, 276), (3, 278)}
+Unlock() request invoked, Lock Clock: {(1, 277), (2, 276), (3, 278)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 277), (2, 276), (3, 279)}, Current Clock: {(1, 277), (2, 276), (3, 279)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 277), (2, 276), (3, 279)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 277), (2, 276), (3, 279)}, Current Clock: {(1, 277), (2, 276), (3, 279)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 277), (2, 276), (3, 279)}
+Lock request has been granted, Lock Clock: {(1, 277), (2, 276), (3, 279)}
+Unlock() request invoked, Lock Clock: {(1, 277), (2, 276), (3, 279)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 280), (2, 276), (3, 279)}, My Current Clock: {(1, 277), (2, 276), (3, 279)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 280), (2, 281), (3, 279)}, My Current Clock: {(1, 280), (2, 276), (3, 280)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 280), (2, 282), (3, 279)}, My Current Clock: {(1, 280), (2, 281), (3, 281)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 280), (2, 282), (3, 283)}, Current Clock: {(1, 280), (2, 282), (3, 283)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 280), (2, 282), (3, 283)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 280), (2, 282), (3, 283)}, Current Clock: {(1, 280), (2, 282), (3, 283)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 280), (2, 282), (3, 283)}
+Lock request has been granted, Lock Clock: {(1, 280), (2, 282), (3, 283)}
+Unlock() request invoked, Lock Clock: {(1, 280), (2, 282), (3, 283)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 284), (2, 282), (3, 283)}, My Current Clock: {(1, 280), (2, 282), (3, 283)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 285), (2, 282), (3, 283)}, My Current Clock: {(1, 284), (2, 282), (3, 284)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 285), (2, 286), (3, 283)}, My Current Clock: {(1, 285), (2, 282), (3, 285)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 285), (2, 286), (3, 287)}, Current Clock: {(1, 285), (2, 286), (3, 287)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 285), (2, 286), (3, 287)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 285), (2, 286), (3, 287)}, Current Clock: {(1, 285), (2, 286), (3, 287)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 285), (2, 286), (3, 287)}
+Lock request has been granted, Lock Clock: {(1, 285), (2, 286), (3, 287)}
+Unlock() request invoked, Lock Clock: {(1, 285), (2, 286), (3, 287)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 288), (2, 286), (3, 287)}, My Current Clock: {(1, 285), (2, 286), (3, 287)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 288), (2, 289), (3, 287)}, My Current Clock: {(1, 288), (2, 286), (3, 288)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 288), (2, 290), (3, 287)}, My Current Clock: {(1, 288), (2, 289), (3, 289)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 291), (2, 290), (3, 287)}, My Current Clock: {(1, 288), (2, 290), (3, 290)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 291), (2, 290), (3, 292)}, Current Clock: {(1, 291), (2, 290), (3, 292)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 291), (2, 290), (3, 292)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 291), (2, 290), (3, 292)}, Current Clock: {(1, 291), (2, 290), (3, 292)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 291), (2, 290), (3, 292)}
+Lock request has been granted, Lock Clock: {(1, 291), (2, 290), (3, 292)}
+Unlock() request invoked, Lock Clock: {(1, 291), (2, 290), (3, 292)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 291), (2, 293), (3, 292)}, My Current Clock: {(1, 291), (2, 290), (3, 292)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 291), (2, 293), (3, 294)}, Current Clock: {(1, 291), (2, 293), (3, 294)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 291), (2, 293), (3, 294)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 291), (2, 293), (3, 294)}, Current Clock: {(1, 291), (2, 293), (3, 294)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 291), (2, 293), (3, 294)}
+Lock request has been granted, Lock Clock: {(1, 291), (2, 293), (3, 294)}
+Unlock() request invoked, Lock Clock: {(1, 291), (2, 293), (3, 294)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 295), (2, 293), (3, 294)}, My Current Clock: {(1, 291), (2, 293), (3, 294)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 295), (2, 293), (3, 296)}, Current Clock: {(1, 295), (2, 293), (3, 296)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 295), (2, 293), (3, 296)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 295), (2, 293), (3, 296)}, Current Clock: {(1, 295), (2, 293), (3, 296)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 295), (2, 293), (3, 296)}
+Lock request has been granted, Lock Clock: {(1, 295), (2, 293), (3, 296)}
+Unlock() request invoked, Lock Clock: {(1, 295), (2, 293), (3, 296)}
+Received LockRequest() from peer, Peer ID: myProg-2, My ID: myProg-3, Lock Request Clock: {(1, 295), (2, 297), (3, 296)}, My Current Clock: {(1, 295), (2, 293), (3, 296)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 298), (2, 297), (3, 296)}, My Current Clock: {(1, 295), (2, 297), (3, 297)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 298), (2, 297), (3, 299)}, Current Clock: {(1, 298), (2, 297), (3, 299)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 298), (2, 297), (3, 299)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 298), (2, 297), (3, 299)}, Current Clock: {(1, 298), (2, 297), (3, 299)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 298), (2, 297), (3, 299)}
+Lock request has been granted, Lock Clock: {(1, 298), (2, 297), (3, 299)}
+Unlock() request invoked, Lock Clock: {(1, 298), (2, 297), (3, 299)}
+Sending LockRequest() to peer, Receiver ID: myProg-1, Sender ID: myProg-3, Lock Clock: {(1, 298), (2, 297), (3, 300)}, Current Clock: {(1, 298), (2, 297), (3, 300)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-1, Lock Clock: {(1, 298), (2, 297), (3, 300)}
+Sending LockRequest() to peer, Receiver ID: myProg-2, Sender ID: myProg-3, Lock Clock: {(1, 298), (2, 297), (3, 300)}, Current Clock: {(1, 298), (2, 297), (3, 300)}
+Received SendAckRequest() from peer, My ID: myProg-3, Sender ID: myProg-2, Lock Clock: {(1, 298), (2, 297), (3, 300)}
+Lock request has been granted, Lock Clock: {(1, 298), (2, 297), (3, 300)}
+Unlock() request invoked, Lock Clock: {(1, 298), (2, 297), (3, 300)}
+Received LockRequest() from peer, Peer ID: myProg-1, My ID: myProg-3, Lock Request Clock: {(1, 301), (2, 297), (3, 300)}, My Current Clock: {(1, 298), (2, 297), (3, 300)}

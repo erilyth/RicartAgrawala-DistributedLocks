@@ -25,6 +25,8 @@ done
 rm $filename
 rm myProg.*
 
+trap 'jobs -p | xargs kill' EXIT
+
 javac -cp ./bin -d ./bin ./src/*.java
 echo 'Compiled Required files'
 rmic -classpath bin/ -d bin/ AdderRemote
@@ -38,4 +40,8 @@ for i in `seq 1 $n`;
 do
   java -cp bin/ MyClient $i $n $filename &
   sleep 0.2
+done
+
+while pgrep -P "$BASHPID" > /dev/null; do
+  wait
 done
