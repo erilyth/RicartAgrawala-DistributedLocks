@@ -133,17 +133,15 @@ public class AdderRemote extends UnicastRemoteObject implements Adder{
 	}
 	
 	public int compareClock(Clock clk1, Clock clk2){
+		int res = 1;
 		for(int i=0;i<clk1.getClockCount();i++){
 			int cur = clk1.getClock(i).getValue();
 			int cur2 = clk2.getClock(i).getValue();
 			if(cur2>cur){
-				return 0;
-			}
-			if(cur>cur2){
-				return 1;
+				res = 0;
 			}
 		}
-		return 1;
+		return res;
 	}
 	
 	public static String getClockStr(Clock clk){
